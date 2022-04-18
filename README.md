@@ -1,2 +1,3 @@
 # Star-buy
-hello
+hello 
+this is an E-commerce Application allowing users to buy different products online.
