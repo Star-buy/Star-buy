@@ -1,143 +1,141 @@
 <template>
-   <div>
-      <header>
+  <div>
+    <header>
+      <a href="#" class="logo" ><i class="fas fa-utensils"></i>Star-buy</a>
 
-    <a href="#" class="logo"><i class="fas fa-utensils"></i>Star-buy</a>
+      <div id="menu-bar" class="fas fa-bars"></div>
 
-    <div id="menu-bar" class="fas fa-bars"></div>
-
-    <nav class="navbar">
+      <nav class="navbar">
         <a href="#home">Home</a>
         <a href="#gallery">gallery</a>
         <a href="#review">review</a>
         <a href="#order">order</a>
-    </nav>
-
-</header>
-   </div>
+      </nav>      
+    </header>
+  </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap");
 
-:root{
-  --red:#ff3838;
+:root {
+  --red: #ff3838;
 }
 
-*{
-  font-family: 'Nunito', sans-serif;
-  margin:0; padding:0;
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  outline: none; border:none;
+  outline: none;
+  border: none;
   text-decoration: none;
   text-transform: capitalize;
-  transition:all .2s linear;
+  transition: all 0.2s linear;
 }
 
-*::selection{
-  background:var(--red);
-  color:#fff;
+*::selection {
+  background: var(--red);
+  color: #fff;
 }
 
-html{
+html {
   font-size: 62.5%;
   overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
 }
 
-body{
-  background:#f7f7f7;
-
-
-  
+body {
+  background: #f7f7f7;
 }
 
-section{
-  padding:2rem 9%;
+section {
+  padding: 2rem 9%;
 }
 
-.heading{
+.heading {
   text-align: center;
   font-size: 3.5rem;
-  padding:1rem;
-  color:#666;
+  padding: 1rem;
+  color: #666;
 }
 
-.heading span{
-  color:var(--red);
+.heading span {
+  color: var(--red);
 }
 
-.btn{
+.btn {
   display: inline-block;
-  padding:.8rem 3rem;
-  border:.2rem solid var(--red);
-  color:var(--red);
+  padding: 0.8rem 3rem;
+  border: 0.2rem solid var(--red);
+  color: var(--red);
   cursor: pointer;
   font-size: 1.7rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   position: relative;
   overflow: hidden;
   z-index: 0;
   margin-top: 1rem;
 }
 
-.btn::before{
-  content: '';
+.btn::before {
+  content: "";
   position: absolute;
-  top:0; right: 0;
-  width:0%;
-  height:100%;
-  background:var(--red);
-  transition: .3s linear;
+  top: 0;
+  right: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--red);
+  transition: 0.3s linear;
   z-index: -1;
 }
 
-.btn:hover::before{
-  width:100%;
+.btn:hover::before {
+  width: 100%;
   left: 0;
 }
 
-.btn:hover{
-  color:#fff;
+.btn:hover {
+  color: #fff;
 }
 
-header{
+header {
   position: fixed;
-  top:0; left: 0; right:0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background:#fff;
-  padding:2rem 9%;
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  background: #fff;
+  padding: 2rem 9%;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
-header .logo{
+header .logo {
   font-size: 2.5rem;
   font-weight: bolder;
-  color:#666;
+  color: #666;
 }
 
-header .logo i{
-  padding-right: .5rem;
-  color:var(--red);
+header .logo i {
+  padding-right: 0.5rem;
+  color: var(--red);
 }
 
-header .navbar a{
+header .navbar a {
   font-size: 2rem;
   margin-left: 2rem;
-  color:#666;
+  color: #666;
 }
 
-header .navbar a:hover{
-  color:var(--red);
+header .navbar a:hover {
+  color: var(--red);
 }
 </style>
