@@ -14,7 +14,6 @@
             <span class="price">$20</span><span class="actual-price">$40</span>
         </div>
     </div>
-    <img src="" alt="">
 </div>
 </section>
 </template>

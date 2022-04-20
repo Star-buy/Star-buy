@@ -39,7 +39,6 @@ export default {};
 
 <style>
 .topbar {
-  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
