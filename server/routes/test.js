@@ -1,7 +1,7 @@
 const Test = require("../DataBase-mongo/models/test.model.js");
 const router = require("express").Router();
 
-router.get("/lol", (req, res) => {
+router.get("/test", (req, res) => {
   Test.find({})
     .then((data) => {
       console.log("GETTING FROM THE DATA SUCCESSFULY");
