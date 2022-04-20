@@ -113,15 +113,15 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #fff;
-  padding: 2rem 9%;
+  background: #181925;
+  padding: 2.5rem 9%;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
 header .logo {
   font-size: 2.5rem;
   font-weight: bolder;
-  color: #666;
+  color: #fffbfb;
 }
 
 header .logo i {
@@ -132,7 +132,7 @@ header .logo i {
 header .navbar a {
   font-size: 2rem;
   margin-left: 2rem;
-  color: #666;
+  color: #fefefe;
 }
 
 header .navbar a:hover {

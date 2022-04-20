@@ -4,7 +4,7 @@
   <h1>test</h1>
   <nav class="topbar">
     <div class="top">
-      <img src="/images/logo-websites-31330.png" class="brand-logo" alt="" />
+      <img src="/images/sale.png" class="brand-logo" alt="" />
       <div class="nav-items">
         <div class="search">
           <input
@@ -25,6 +25,12 @@
         <li class="link-item"><a href="#" class="link">Accessories</a></li>
     </ul>
   </nav>
+  <div class="hero-section">
+    <div class="content">
+        <!-- <img src="/images/logo-websites-31330.png" class="logo" alt="">
+        <p class="sub-heading">best fashion collection of all time</p> -->
+    </div>
+</div>
 </template>
 
 <script>
@@ -37,7 +43,7 @@ export default {};
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgb(235, 238, 238);
+  background-color:#bcbfe4;
   z-index: 9;
 }
 .top {
@@ -46,7 +52,7 @@ export default {};
   justify-content: space-between;
 }
 .brand-logo {
-  height: 100px;
+      height: 127px;
 }
 .nav-items{
     display:flex;
@@ -60,7 +66,7 @@ export default {};
     width:80%;
     height:50px;
     padding:20px;
-    border-top-left-radius:10px;
+    border-top-left-radius: 17px;
     border: 1px solid #000000;
     text-transform:capitalize;
     font-size: medium;
@@ -75,7 +81,7 @@ export default {};
     border:none;
     outline:none;
     cursor:pointer;
-    background:#000000;
+    background: #181925;
     color:#fff;
     text-transform: capitalize;
     font-size:15px;
@@ -96,18 +102,42 @@ export default {};
     list-style: none;
     border-top:1px solid #d1d1d1;
 }
-.link{
+.link {
     text-transform: capitalize;
-    padding: 0 10px;
-    margin:0 5px;
-    font-size: 20px;
+    padding: 8px 16px;
+    margin: 11px 0px;
+    font-size: 22px;
     text-decoration: none;
-    color:#000000;
-    opacity:0.5;
-    transition:.5s;
+    color: #000000;
+    opacity: 14.5;
+    transition: 0.5s;
 }
-.link:hover{
+ .link:hover{
     color:red;
     opacity:1;
 }
+.hero-section{
+    width: 100%;
+    height: calc(100vh - 120px);
+    background-image: url('/images/cart_8.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 
+.hero-section .logo{
+    height: 150px;
+    display: block;
+    margin: auto;
+}
+
+.hero-section .sub-heading{
+    margin-top: 10px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    text-transform: capitalize;
+    font-size: 35px;
+    font-weight: 300;
+}  */
 </style>
