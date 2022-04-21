@@ -1,21 +1,22 @@
 <script setup>
-import Navbar from "./components/Navbar.vue";
-import UnderNav from "./components/UnderNav.vue";
-import Card from "./components/Card.vue";
-import Accessories from "./components/Accessories.vue";
-import Footer from "./components/Footer.vue"
 import Review from "./components/Review.vue"
+import Signin from "./components/Signin.vue"
+import Signup from "./components/Signup.vue"
+import Card from "./components/Card.vue"
 </script>
 
 <template>
 
-<main> <Navbar/></main>
+<!-- <main> <Navbar/></main>
 <UnderNav/>
 <Card/>
 <Accessories/>
-<Review/>
-<Footer/>
 
+<Footer/> -->
+ <!-- <Signin/> 
+ <Signup/>  -->
+ <Review/>   
+ <!-- <Card/> -->
 </template>
 
 <style>

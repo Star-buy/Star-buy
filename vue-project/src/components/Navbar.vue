@@ -20,7 +20,7 @@ export default {};
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap");
 
 :root {
   --red: #ff3838;
@@ -137,5 +137,5 @@ header .navbar a {
 
 header .navbar a:hover {
   color: var(--red);
-}
+} */
 </style>
