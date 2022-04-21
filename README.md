@@ -29,6 +29,8 @@
 
  npm install stripe
 
+ npm i swiper
+
 
 ⭐ User Features
 
