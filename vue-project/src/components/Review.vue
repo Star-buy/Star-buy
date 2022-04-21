@@ -8,78 +8,64 @@
     <div class="con">
       <div class="brandi"></div>
       <div class="brandtitle">Give as a review</div>
-      <div class="inputsss">
-        <label class="pass" >NAME</label>
-        <input type="email" class="inpat" placeholder="Put your name ..." v-model="name"/>
-        <label class="pass">LOCATION</label>
-        <input type="email" class="inpat" placeholder="Put your Location ..." v-model="location"/>
-        <label class="pass">Photo</label>
-        <div v-if="!image" >
-          <h2 class="texto">Select your image</h2>
-          <input type="file" @change="onFileChange" />
-        </div>
-        <div v-else>
-          <img :src="image" class="imaget"/>
-        </div>
-        <label class="passs">DESCRIPTION</label>
-        <textarea type="description"  v-model="description"/>
-        <button type="submit" class="log" @click="postReview" >Send</button>
-      </div>
-    </div>
-    <div class="reviews">
-      <div class="review">
-        <div class="head-review">
-          <img
-            src="https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"
-            width="250px"
-            class="image-rev"
+      <form>
+        <div class="inputsss">
+          <label class="pass" >NAME</label>
+          <input
+            type="texte"
+            class="inpat"
+            placeholder="Put your name ..."
+            v-model="name"
           />
-        </div>
-        <div class="body-review">
-          <div class="name-review">Nathan D.</div>
-          <div class="place-review">Germany</div>
-          <div class="rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half"></i>
+          <label class="pass">LOCATION</label>
+          <input
+            type="texte"
+            class="inpat"
+            placeholder="Put your Location ..."
+            v-model="location"
+          />
+          <label class="pass">ADD YOUR IMAGE</label>
+          <div v-if="!formData.image">
+            <h2 class="texto">Select your image</h2>
+            <input type="file" @change="onFileChange" />
           </div>
-          <div class="desc-review">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati
-            eligendi suscipit illum officia ex eos.
+          <div v-else>
+            <img :src="formData.image" class="imaget" />
           </div>
+          <label class="passs">DESCRIPTION</label>
+          <textarea type="description" v-model="description" />
+          <button type="submit" class="log" @click="postReview">Send</button>
         </div>
-      </div>
-     <!-- //map here  -->
-    </div> 
+      </form>
+    </div>
   </div>
 </template>
 
 <script>
-import axios from "axios"
+import axios from "axios";
 export default {
+  name: "Review",
   data() {
     return {
-      name :"",
-      image: "",
-      location: "",
-      description: "",
+      formData: {
+        name: "",
+        image: "",
+        location: "",
+        description: "",
+      },
     };
   },
   methods: {
-  postReview() {
-  axios.post("/post/review",{
-      name:this.name,
-      image:this.image,
-      location:this.location,
-      description:this.description,
-  }).then((result)=>{
-  console.log(result)
-  }).catch(err => {
-      console.log(err)
-  })
-  },
+    postReview() {
+      axios
+        .post("/test", this.formData)
+        .then((result) => {
+          console.log(result);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
     onFileChange(e) {
       var files = e.target.files;
       if (!files.length) return;
@@ -90,7 +76,7 @@ export default {
       var vm = this;
 
       reader.onload = (e) => {
-        vm.image = e.target.result;
+        vm.formData.image = e.target.result;
       };
       reader.readAsDataURL(file);
     },
@@ -99,78 +85,6 @@ export default {
 </script>
 
 <style>
-.rev-section {
-  margin: auto;
-  padding: 0 1rem;
-  max-width: 1100px;
-  text-align: center;
-}
-.title {
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  color: rgb(50, 50, 50);
-  margin-bottom: 0.5rem;
-}
-.note {
-  font-size: 2.1rem;
-  color: rgb(150, 150, 150);
-  font-style: italic;
-}
-.reviews {
-  margin: 2rem auto;
-  display: flex;
-  flex-wrap: wrap;
-}
-.review {
-  margin: 0 1rem;
-  min-width: 300px;
-  flex: 1;
-}
-.head-review {
-  margin: 1.75rem auto;
-  width: 150px;
-  height: 150px;
-}
-.image-rev {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-}
-
-.body-review {
-  background-color: rgb(238, 238, 238);
-  padding: 2.5rem;
-  box-shadow: 2px 2px 10px 3px rgb(225, 225, 225);
-}
-.name-review {
-  font-size: 1.5rem;
-  color: rgb(50, 50, 50);
-  margin-bottom: 0.25rem;
-}
-.place-review {
-  font-size: 2.1rem;
-  color: red;
-  font-style: italic;
-}
-.rating {
-  color: rgb(253, 180, 42);
-  margin: 1rem 0;
-}
-.desc-review {
-  font-size: 2.1rem;
-  line-height: -7.5rem;
-  letter-spacing: 1px;
-  color: rgb(150, 150, 150);
-}
-
-@media (max-width: 678px) {
-  .review {
-    margin-top: 1.5rem;
-  }
-}
-
 .con {
   position: relative;
   width: 456px;
@@ -309,8 +223,8 @@ textarea {
   width: 2cm;
   height: 2cm;
 }
-.texto{
-    text-align: center;
-    color:#1da1f2
+.texto {
+  text-align: center;
+  color: #1da1f2;
 }
 </style>

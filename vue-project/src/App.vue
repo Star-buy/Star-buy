@@ -3,6 +3,7 @@ import Review from "./components/Review.vue"
 import Signin from "./components/Signin.vue"
 import Signup from "./components/Signup.vue"
 import Card from "./components/Card.vue"
+import ReviewList from "./components/ReviewList.vue"
 </script>
 
 <template>
@@ -16,6 +17,7 @@ import Card from "./components/Card.vue"
  <!-- <Signin/> 
  <Signup/>  -->
  <Review/>   
+ <ReviewList/>
  <!-- <Card/> -->
 </template>
 

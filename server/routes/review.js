@@ -3,6 +3,7 @@ const router = require("express").Router();
 const cloudinary = require("../utils/cloudinary")
 const upload = require("../utils/multer")
 
+
 router.get("/test", (req, res) => {
   Review.find({})
     .then((data) => {
@@ -13,6 +14,8 @@ router.get("/test", (req, res) => {
       res.status(500).send(error);
     });
 }); //Tested
+
+
 router.post('/test', upload.single("image"), async (req,res) => {
    try{
    const image=req.body.image
@@ -30,8 +33,7 @@ router.post('/test', upload.single("image"), async (req,res) => {
    } catch(err) {
    console.log(err )
    }
-
-})
+}) //tested
 
 router.delete("/delete/:id", (req, res) => {
   let id = req.params.id;

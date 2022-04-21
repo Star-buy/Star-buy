@@ -8,7 +8,7 @@ dotenv.config()
 
 /***************** Including Routes *****************/
 //ToDo
-const reviewRoutes = require("./routes/test");
+const reviewRoutes = require("./routes/review");
 const registrer = require("./routes/registrer");
 
 /********************* Database *********************/
