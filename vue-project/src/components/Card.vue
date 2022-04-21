@@ -16,7 +16,6 @@
         </div>
     </div>
 </div>
-<button @click='displayPost' >as</button>
 </section>
 </template>
 
@@ -32,18 +31,15 @@ posts:[]
    }
    },
 methods:{
-    displayPost(){
+     created(){
         axios.get('http://localhost:5000/admin').then((result)=>{
          this.posts= result.data
             }
             )
             .catch((error)=>{console.log(error)})
 
-    },
-      mounted() {
-    this.displayPost();
-  },
-
+    
+ },
 
 }
 

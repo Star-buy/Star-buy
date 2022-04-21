@@ -9,12 +9,13 @@ import adminpart from "./components/adminpart.vue"
 </script>
 
 <template>
-
-<main><Navbar/> </main> 
+<div>
+<main><adminpart/> </main> 
    <UnderNav/>
 <Card/>
 <Accessories/>
 <Footer/>  
+</div>
 </template>  
 
 <style>
