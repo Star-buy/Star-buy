@@ -30,10 +30,7 @@ module.exports = (db) => {
     .error(err => {
       console.log(err);
     })
-]
-
-    
-    
+]   
 };
 
 /////////////////////////////////////
