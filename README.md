@@ -82,6 +82,7 @@
 - If you'd like to contribute, please fork the repository and make changes as you'd like.
 
 - Pull requests are warmly welcome. 
+-cyrine
 
 - Thanks a lot. 👨‍💻
 >>>>>>> cf3eebe7a9ea89d3931d6e89fe0166c70438943a
