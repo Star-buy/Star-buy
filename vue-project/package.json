@@ -1,0 +1,22 @@
+{
+  "name": "vue-project",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build -d --watch",
+    "preview": "vite preview --port 5050"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "mon": "^0.0.8",
+    "mongodb": "^4.5.0",
+    "mongoose": "^6.3.0",
+    "vue": "^3.2.31"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.1",
+    "vite": "^2.9.1"
+  }
+}
