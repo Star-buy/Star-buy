@@ -9,12 +9,12 @@
       <div class="brandi"></div>
       <div class="brandtitle">Give as a review</div>
       <div class="inputsss">
-        <label class="pass">NAME</label>
-        <input type="email" class="inpat" placeholder="Put your name ..." />
+        <label class="pass" >NAME</label>
+        <input type="email" class="inpat" placeholder="Put your name ..." v-model="name"/>
         <label class="pass">LOCATION</label>
-        <input type="email" class="inpat" placeholder="Put your Location ..." />
+        <input type="email" class="inpat" placeholder="Put your Location ..." v-model="location"/>
         <label class="pass">Photo</label>
-        <div v-if="!image">
+        <div v-if="!image" >
           <h2 class="texto">Select your image</h2>
           <input type="file" @change="onFileChange" />
         </div>
@@ -22,8 +22,8 @@
           <img :src="image" class="imaget"/>
         </div>
         <label class="passs">DESCRIPTION</label>
-        <textarea type="description" />
-        <button type="submit" class="log" >Send</button>
+        <textarea type="description"  v-model="description"/>
+        <button type="submit" class="log" @click="postReview" >Send</button>
       </div>
     </div>
     <div class="reviews">
@@ -51,18 +51,35 @@
           </div>
         </div>
       </div>
-    </div>
+     <!-- //map here  -->
+    </div> 
   </div>
 </template>
 
 <script>
+import axios from "axios"
 export default {
   data() {
     return {
+      name :"",
       image: "",
+      location: "",
+      description: "",
     };
   },
   methods: {
+  postReview() {
+  axios.post("/post/review",{
+      name:this.name,
+      image:this.image,
+      location:this.location,
+      description:this.description,
+  }).then((result)=>{
+  console.log(result)
+  }).catch(err => {
+      console.log(err)
+  })
+  },
     onFileChange(e) {
       var files = e.target.files;
       if (!files.length) return;
