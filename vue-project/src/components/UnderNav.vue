@@ -1,4 +1,5 @@
 <template>
+<div>
   <h1>test</h1>
   <h1>test</h1>
   <h1>test</h1>
@@ -31,6 +32,7 @@
         <p class="sub-heading">best fashion collection of all time</p> -->
     </div>
 </div>
+</div>
 </template>
 
 <script>
@@ -39,7 +41,6 @@ export default {};
 
 <style>
 .topbar {
-  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -103,7 +104,6 @@ export default {};
     border-top:1px solid #d1d1d1;
 }
 .link {
-    text-transform: capitalize;
     padding: 8px 16px;
     margin: 11px 0px;
     font-size: 22px;
