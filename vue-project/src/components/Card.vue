@@ -1,26 +1,51 @@
 <template>
   <section class="product">
+
     <h2 class="product-category">Selling</h2>
     <div class="product-container">
-    <div class="product-card">
+    <div  v-for="post in posts" :key="post.id" class="product-card">
         <div class="product-image">
-            <span class="discount-tag">50% off</span>
-            <img src="https://cdn.cliqueinc.com/posts/244073/model-outfits-244073-1512582993592-image.700x0c.jpg" class="product-thumb" alt="">
-            <button class="card-btn">add to whislist</button>
+            <span class="discount-tag">20% off</span>
+            <img :src="post.image" class="product-thumb">
+            <button class="card-btn" @click="displayPost" >add to whislist</button>
         </div>
         <div class="product-info">
-            <h2 class="product-brand">brand</h2>
-            <p class="product-short-des">DESCRIBE EL Produit</p>
-            <span class="price">$20</span><span class="actual-price">$40</span>
+            <h2  class="product-brand" > {{post.title}} </h2>
+            <p class="product-short-des"  > {{post.description}} </p>
+            <span  class="price">${{post.price}} </span><span class="actual-price">$40</span>
         </div>
     </div>
-    <img src="" alt="">
 </div>
+<button @click='displayPost' >as</button>
 </section>
 </template>
 
 <script>
+import axios from "axios"
 export default {
+data() {
+   return{
+      data:null,
+      imgsrc:null,
+      boolean:false,
+posts:[] 
+   }
+   },
+methods:{
+    displayPost(){
+        axios.get('http://localhost:5000/admin').then((result)=>{
+         this.posts= result.data
+            }
+            )
+            .catch((error)=>{console.log(error)})
+
+    },
+      mounted() {
+    this.displayPost();
+  },
+
+
+}
 
 }
 </script>

@@ -1,22 +1,27 @@
 <template>
-  <h1>test</h1>
-  <h1>test</h1>
-  <h1>test</h1>
+<div>
+ 
   <nav class="topbar">
     <div class="top">
       <img src="/images/sale.png" class="brand-logo" alt="" />
       <div class="nav-items">
         <div class="search">
+
           <input
+          v-model="search"
             type="text"
             class="search-box"
             placeholder="search brand/Product"
           />
+   
           <button class="search-btn">Search</button>
         </div>
         <a href="#"><img src="/images/user.png"></a>
         <a href="#"><img src="/images/cart.png"></a>
       </div>
+    </div>
+           <div v-for="post in filteredPosts" :key="post.id">
+      <post :post="post"></post>
     </div>
     <ul class="links-container">
         <li class="link-item"><a href="#" class="link">Men</a></li>
@@ -31,15 +36,55 @@
         <p class="sub-heading">best fashion collection of all time</p> -->
     </div>
 </div>
+ 
+</div>
 </template>
 
 <script>
-export default {};
+import axios from "axios"
+import Post from "./Post.vue";
+export default {
+ name: "App",
+  components: {
+    Post
+  },
+  data() {
+    return {
+      search: "",
+      
+      posts: []
+    };
+  },
+  methods:{
+    getPosts(){
+          axios.get("http://localhost:5000/admin")
+          .then((res)=>{
+            this.posts= res.data,
+            console.log(res.data)
+          })
+          .catch(err => {
+            console.log(err)
+          })
+        }
+  },
+  mounted(){
+    this.getPosts()
+  },
+  computed: {
+    filteredPosts() {
+      return this.posts.filter(post =>
+        post.title.toLowerCase().includes(this.search.toLowerCase())
+      );
+    }
+  }
+};
 </script>
+
+
+
 
 <style>
 .topbar {
-  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -68,7 +113,7 @@ export default {};
     padding:20px;
     border-top-left-radius: 17px;
     border: 1px solid #000000;
-    text-transform:capitalize;
+    
     font-size: medium;
     background:none;
     color:#000000;
@@ -83,7 +128,7 @@ export default {};
     cursor:pointer;
     background: #181925;
     color:#fff;
-    text-transform: capitalize;
+    
     font-size:15px;
     border-top-right-radius:10px;
     border-bottom-right-radius:10px;
@@ -103,7 +148,6 @@ export default {};
     border-top:1px solid #d1d1d1;
 }
 .link {
-    text-transform: capitalize;
     padding: 8px 16px;
     margin: 11px 0px;
     font-size: 22px;
