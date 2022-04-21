@@ -8,29 +8,29 @@
     <div class="con">
       <div class="brandi"></div>
       <div class="brandtitle">Give as a review</div>
-      <form>
+      <form >
         <div class="inputsss">
-          <label class="pass" >NAME</label>
+          <label class="pass" for="name">NAME</label>
           <input
             type="texte"
             class="inpat"
             placeholder="Put your name ..."
             v-model="name"
           />
-          <label class="pass">LOCATION</label>
+          <label class="pass" for="location">LOCATION</label>
           <input
             type="texte"
             class="inpat"
             placeholder="Put your Location ..."
             v-model="location"
           />
-          <label class="pass">ADD YOUR IMAGE</label>
-          <div v-if="!formData.image">
+          <label class="pass" for="image">ADD YOUR IMAGE</label>
+          <div v-if="!image">
             <h2 class="texto">Select your image</h2>
             <input type="file" @change="onFileChange" />
           </div>
           <div v-else>
-            <img :src="formData.image" class="imaget" />
+            <img :src="image" class="imaget" />
           </div>
           <label class="passs">DESCRIPTION</label>
           <textarea type="description" v-model="description" />
@@ -47,18 +47,18 @@ export default {
   name: "Review",
   data() {
     return {
-      formData: {
+      
         name: "",
         image: "",
         location: "",
         description: "",
-      },
+      
     };
   },
   methods: {
     postReview() {
       axios
-        .post("/test", this.formData)
+        .post("/test", {name:this.name, image:this.image,location:this.location,description:this.description})
         .then((result) => {
           console.log(result);
         })
@@ -76,7 +76,7 @@ export default {
       var vm = this;
 
       reader.onload = (e) => {
-        vm.formData.image = e.target.result;
+        vm.image = e.target.result;
       };
       reader.readAsDataURL(file);
     },

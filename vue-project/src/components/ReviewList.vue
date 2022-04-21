@@ -1,46 +1,51 @@
 <template>
   <div class="reviews">
-      <div class="review">
-        <div class="head-review">
-          <img
-            src="https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"
-            width="250px"
-            class="image-rev"
-          />
-        </div>
-        <div class="body-review">
-          <div class="name-review">Nathan D.</div>
-          <div class="place-review">Germany</div>
-          <div class="desc-review">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati
-            eligendi suscipit illum officia ex eos.
-          </div>
+    <div class="review" v-for="review in reviews" :key="review.id"> 
+      <div class="head-review">
+        <img
+          v-bind:src="`${review.image}`"
+          width="250px"
+          class="image-rev"
+        />
+      </div>
+      <div class="body-review">
+        <div class="name-review">{{review.name}}</div>
+        <div class="place-review">{{review.location}}</div>
+        <div class="desc-review">{{review.description}}</div>
         </div>
       </div>
-        <div class="review">
-        <div class="head-review">
-          <img
-            src="https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"
-            width="250px"
-            class="image-rev"
-          />
-        </div>
-        <div class="body-review">
-          <div class="name-review">Nathan D.</div>
-          <div class="place-review">Germany</div>
-          <div class="desc-review">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati
-            eligendi suscipit illum officia ex eos.
-          </div>
-        </div>
-      </div>
-  </div>
+    </div>
+    <h1 v-if="Boolean" style="color:red" > You can check the by clicking in this button below</h1>
+  <button @click="getReviews">Vue All Feedbacks</button>
 </template>
 
 <script>
+import axios from "axios";
 export default {
-
-}
+  name: "ReviewList",
+  data() {
+    return {
+      reviews: [],
+      Boolean:true,
+    };
+  },
+  methods: {
+    getReviews() {
+      axios
+        .get("/test")
+        .then((response)=>{
+            console.log(response); 
+            this.reviews = response.data;
+            this.Boolean=false;
+             console.log(response.data,"wehifbkj");
+        })
+        .catch((error) => {
+          console.log(error);
+          this.Boolean=false;
+        });
+    },
+  },
+};
 </script>
 
 <style>
