@@ -29,7 +29,9 @@ router.post("/signup", async (req, res) => {
     if (err) {
       res.send(err);
     }
+    console.log(result);
     if (result.length > 0) {
+      
       res.send("username exist");
     } else {
       getAllEmails(email, async (err, result) => {
@@ -41,7 +43,9 @@ router.post("/signup", async (req, res) => {
         } else {
           try {
             const imag = req.body.image;
+           
 const response = await cloudinar.uploader.upload(imag,async function(error, result) {
+  console.log(error)
   const image = result.secure_url
 
             const salt = await bcrypt.genSalt();

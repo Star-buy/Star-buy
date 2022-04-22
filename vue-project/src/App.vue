@@ -4,15 +4,17 @@ import UnderNav from "./components/UnderNav.vue";
 import Card from "./components/Card.vue";
 import Accessories from "./components/Accessories.vue";
 import Footer from "./components/Footer.vue"
+import signin from "./components/Signin.vue"
+import signup from "./components/Signup.vue"
 </script>
 
 <template>
 
-<main> <Navbar/></main>
-<UnderNav/>
+<main><signup/><signin/></main>
+<!-- <UnderNav/>
 <Card/>
 <Accessories/>
-<Footer/>
+<Footer/> -->
 </template>
 
 <style>
