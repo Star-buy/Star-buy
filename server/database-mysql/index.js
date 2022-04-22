@@ -47,6 +47,21 @@ connection.query(sql,[email], (err, result) =>{
 })
 }
 
+const postItem =(title,description,image,price,callback)=>{
+const sql = "INSERT INTO items (title,description,image,price) VALUES (?,?,?,?)"
+connection.query(sql, [title, description,image, price],(err,result)=>{
+  callback(err, result)
+})
+}
+
+const getItem =(callback)=>{
+  const sql = "SELECT * FROM items;"
+  connection.query(sql,(err, result)=>{
+    callback(err, result)
+  })
+}
+
+
 db.connectAsync()
   .then(() =>
     console.log(`Connected to ${database} database as ID ${db.threadId}`)
@@ -55,4 +70,4 @@ db.connectAsync()
   .then(() => db.queryAsync(`USE ${database}`))
   .then(() => createTables(db));
 
-module.exports = { getAllNames, getAllEmails, signup, getPasswordByEmail,getUserName };
+module.exports = { getAllNames, getAllEmails, signup, getPasswordByEmail,getUserName ,postItem,getItem};

@@ -7,7 +7,7 @@ const app = express();
 //ToDo
 const testRoutes = require("./routes/test");
 const registrer = require("./routes/registrer");
-
+const admin = require("./routes/admin");
 /********************* Database *********************/
 var test = require("./database-mongo");
 var test1 = require("./database-mysql");
@@ -22,6 +22,7 @@ app.use(cors());
 //ToDo
 app.use("/", testRoutes);
 app.use("/", registrer);
+app.use("/",admin)
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

@@ -6,15 +6,17 @@ import Accessories from "./components/Accessories.vue";
 import Footer from "./components/Footer.vue"
 import signin from "./components/Signin.vue"
 import signup from "./components/Signup.vue"
+import adminpart from "./components/adminpart.vue"
+
 </script>
 
 <template>
 
-<main><signup/><signin/></main>
-<!-- <UnderNav/>
+<main><Navbar/></main>
+<UnderNav/>
 <Card/>
 <Accessories/>
-<Footer/> -->
+<Footer/>
 </template>
 
 <style>
