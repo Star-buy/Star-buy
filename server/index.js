@@ -3,10 +3,14 @@ var express = require("express");
 const fileUpload = require("express-fileupload");
 const cors = require("cors");
 const app = express();
+<<<<<<< HEAD
+//DATA
+=======
 const dotenv =require("dotenv");
 const bodyParser = require('body-parser')
 
 dotenv.config()
+>>>>>>> d22c6412939968309b8f5f6570c351830044bec8
 
 /***************** Including Routes *****************/
 //ToDo
