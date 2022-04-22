@@ -4,6 +4,8 @@ const fileUpload = require("express-fileupload");
 const cors = require("cors");
 const app = express();
 const dotenv =require("dotenv");
+const bodyParser = require('body-parser')
+
 dotenv.config()
 
 /***************** Including Routes *****************/
@@ -16,8 +18,9 @@ var test = require("./database-mongo");
 var test1 = require("./database-mysql");
 
 /******************** Middleware ********************/
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/../vue-project/dist"));
 app.use(fileUpload());
 app.use(cors());

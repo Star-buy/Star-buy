@@ -9,7 +9,7 @@ import Navbar from "./components/Navbar.vue"
 import UnderNav from "./components/UnderNav.vue"
 import Accessories from "./components/Accessories.vue"
 import adminpart from "./components/adminpart.vue"
-
+import Footer from "./components/Footer.vue"
 </script>
 
 <template>
@@ -17,10 +17,10 @@ import adminpart from "./components/adminpart.vue"
    <adminpart/>
  <main><adminp/> </main> 
    <UnderNav/>
+   <Card/>
+
 <Accessories/>
 <Footer/>   
-<Card/>
-
 </div>
 </template>  
 
