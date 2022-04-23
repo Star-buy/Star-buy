@@ -1,29 +1,26 @@
-<script setup>
-import Review from "./components/Review.vue"
-import Signin from "./components/Signin.vue"
-import Signup from "./components/Signup.vue"
-import Card from "./components/Card.vue"
-import ReviewList from "./components/ReviewList.vue"
-import Navbar from "./components/Navbar.vue"
-import UnderNav from "./components/UnderNav.vue"
-import Accessories from "./components/Accessories.vue"
-import Adminpart from "./components/Adminpart.vue"
-
-</script>
-
 <template>
-
- <main> <Card/></main>
-
-
-<Footer/>
- <!-- <Signin/> 
- <Signup/>  -->
- <!-- <Review/>
- <ReviewList/> -->
- <!-- <Card/> -->
+  <div>
+   <main><Navbar /></main> 
+    <router-view/>
+    
+  </div>
+  <div>
+      <Signin/>
+     
+      
+  </div>
 </template>
 
-<style>
+<script>
+import Navbar from "./components/Navbar.vue";
+// import UnderNav from "./components/UnderNav.vue";
+ import Footer from "./components/Footer.vue";
+export default {
+  name: "App",
+  components: {
+    Navbar,
+},
+};
+</script>
 
-</style>
+<style></style>

@@ -39,12 +39,17 @@
       </form>
     </div>
   </div>
+  <ReviewList/>
 </template>
 
 <script>
+import ReviewList from "./ReviewList.vue"
 import axios from "axios";
 export default {
   name: "Review",
+  components: {
+    ReviewList,
+  },
   data() {
     return {
       
@@ -85,12 +90,13 @@ export default {
 </script>
 
 <style>
-.con {
+ .con {
   position: relative;
   width: 456px;
   height: 527px px;
   border-radius: 23px;
   padding: 40px;
+  margin: auto;
   box-sizing: border-box;
   background: #ecf0f3;
   box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
@@ -226,5 +232,8 @@ textarea {
 .texto {
   text-align: center;
   color: #1da1f2;
+} 
+.title{
+  color:#ff621e;
 }
 </style>

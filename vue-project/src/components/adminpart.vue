@@ -20,6 +20,7 @@
 <script>
 import axios from "axios"
 export default {
+  name:"Adminpart",
 data() {
    return{
       data:null,
@@ -69,7 +70,7 @@ methods: {
 }
 </script>
 <style>
-#app {
+/* #app {
   text-align: center;
 }
 img {
@@ -80,6 +81,6 @@ img {
   border-radius: 50%;
     width: 2cm;
     height: 2cm;
-}
+} */
 
 </style>

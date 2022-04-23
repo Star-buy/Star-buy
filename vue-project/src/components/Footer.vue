@@ -52,6 +52,7 @@
 
 <script>
 export default {
+    name:"Footer",
 
 
 }
@@ -60,7 +61,7 @@ export default {
 <style>
 footer{
     position: relative;
-    width: 100%;
+    width: 80%;
     padding: 40px 10vw;
     padding-bottom: 80px;
     background: #131313;

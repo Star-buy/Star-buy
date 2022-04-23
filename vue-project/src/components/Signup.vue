@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <!-- <div>
     <h1>Register</h1>
     <input type="text" name="name" v-model="name" />
     <input type="email" name="email" v-model="email" />
@@ -13,12 +13,37 @@
       <button @click="removeImage">Remove image</button>
     </div>
     <button @click="register">registrer</button>
+  </div> -->
+  <div class="conti">
+    <div class="left"></div>
+    <div class="right">
+    <h1 style="color:#b64b20">Registration</h1>
+    <form>
+      <p>Fill your name</p>
+      <input type="text" placeholder="Your Name..." class="nwme">
+      <p>Email</p>
+      <input type="email" placeholder="@gmail.com" class="nwme">
+      <p>Password</p>
+      <input type="password" placeholder="Your Name" class="nwme">
+      <p>Confirm Password</p>
+      <input type="password" placeholder="Your Name" class="nwme"><br/>
+          <div v-if="!image">
+            <h2 class="textoo">Select your image</h2>
+            <input type="file" @change="onFileChange" class="files"/>
+          </div>
+          <div v-else>
+            <img :src="image" class="imaget" />
+          </div>
+      <router class="btna" >Submit</router>
+    </form>
+    </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
 export default {
+  name: "Signup",
   data() {
     return {
       name: "",
@@ -64,16 +89,64 @@ export default {
 };
 </script>
 <style>
-#app {
-  text-align: center;
+.conti {
+  width: 900px;
+  height: 700px;
+  margin: 82px auto;
+  box-sizing:border-box;
+  background-color: #181925;
+  padding: 25px 100px;
+  box-shadow: 0px 8px 16px gray;
 }
-img {
-  width: 30%;
-  margin: auto;
-  display: block;
-  margin-bottom: 10px;
-  border-radius: 50%;
-  width: 2cm;
-  height: 2cm;
+.left {
+  width: 50%;
+  height: 650px;
+  float: left;
+  background: url("https://www.forbes.com/advisor/wp-content/uploads/2021/04/featured-image-pack-clothes.jpeg.jpg");
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  
+}
+.right {
+  width: 50%;
+  height: 650px;
+  float: left;
+  background: #f7f7f7;
+  border-top-right-radius: 10px;
+  border-top-right-radius: 10px;
+  padding:-1 30px;
+  text-align: center;
+  
+  
+}
+.nwme{
+    width: 82%;
+    height: 38px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 3px;
+    padding-left: 20px;
+}
+.btna{
+  width:130px;
+  padding:7px;
+  background-color:#b64b20;
+  color:white;
+  font-size:20px;
+  border:none;
+  border-radius:10px;
+  margin-top:10px;
+  cursor: pointer;
+}
+.btna:hover{
+  background-color:#181925;
+}
+.textoo {
+  text-align: center;
+  color: #b64b20;
+} 
+.files{
+  color:white
 }
 </style>

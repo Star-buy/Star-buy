@@ -23,6 +23,7 @@
 <script>
 import axios from "axios"
 export default {
+    name:"Card",
 data() {
    return{
       data:null,
@@ -51,7 +52,7 @@ methods:{
 </script>
 
 <style>
-section{
+/* section{
     background-color:#e5e8f6;
 }
 .product{
@@ -172,5 +173,5 @@ section{
         font-weight: 900;
     font-size: 20px;
     color :red;
-}
+} */
 </style>

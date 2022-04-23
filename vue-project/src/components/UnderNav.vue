@@ -1,173 +1,134 @@
 <template>
-<div>
- 
-  <nav class="topbar">
-    <div class="top">
-      <img src="/images/sale.png" class="brand-logo" alt="" />
-      <div class="nav-items">
-        <div class="search">
-
-          <input
-          v-model="search"
-            type="text"
-            class="search-box"
-            placeholder="search brand/Product"
-          />
-   
-          <button class="search-btn">Search</button>
+  <div>
+    <nav class="tapnavv">
+      <div class="tapi">
+        <img src="/images/sale.png" class="brandis" alt="" />
+        <div class="nav-ii">
+          <div class="sear">
+            <input
+              type="text"
+              class="search-b"
+              placeholder="search brand/Product"
+            />
+            <button class="search-bt">Search</button>
+          </div>
+          <a href="#"><img src="/images/user.png" /></a>
+          <a href="#"><img src="/images/cart.png" /></a>
         </div>
-        <a href="#"><img src="/images/user.png"></a>
-        <a href="#"><img src="/images/cart.png"></a>
       </div>
-    </div>
-           <div v-for="post in filteredPosts" :key="post.id">
-      <post :post="post"></post>
-    </div>
-    <ul class="links-container">
-        <li class="link-item"><a href="#" class="link">Men</a></li>
-        <li class="link-item"><a href="#" class="link">Women</a></li>
-        <li class="link-item"><a href="#" class="link">Kids</a></li>
-        <li class="link-item"><a href="#" class="link">Accessories</a></li>
-    </ul>
-  </nav>
-  <div class="hero-section">
-    <div class="content">
+      <ul class="lin-container">
+        <li class="li-item"><a href="#" class="li">Men</a></li>
+        <li class="li-item"><a href="#" class="li">Women</a></li>
+        <li class="li-item"><a href="#" class="li">Kids</a></li>
+        <li class="li-item"><a href="#" class="li">Accessories</a></li>
+      </ul>
+    </nav>
+    <div class="hero-section">
+      <div class="content">
         <!-- <img src="/images/logo-websites-31330.png" class="logo" alt="">
         <p class="sub-heading">best fashion collection of all time</p> -->
+      </div>
     </div>
-</div>
- 
-</div>
+  </div>
 </template>
-
 <script>
-import axios from "axios"
-import Post from "./Post.vue";
-export default {
- name: "App",
-  components: {
-    Post
-  },
-  data() {
-    return {
-      search: "",
-      
-      posts: []
-    };
-  },
-  methods:{
-    getPosts(){
-          axios.get("http://localhost:5000/admin")
-          .then((res)=>{
-            this.posts= res.data,
-            console.log(res.data)
-          })
-          .catch(err => {
-            console.log(err)
-          })
-        }
-  },
-  mounted(){
-    this.getPosts()
-  },
-  computed: {
-    filteredPosts() {
-      return this.posts.filter(post =>
-        post.title.toLowerCase().includes(this.search.toLowerCase())
-      );
-    }
-  }
-};
+export default{
+    name:"UnderNav", 
+}
 </script>
 
-
-
-
 <style>
-.topbar {
-  top: 0;
+.tapnavv {
+  margin-top: 84px;
   left: 0;
   width: 100%;
-  background-color:#bcbfe4;
+  background-color: #bcbfe4;
   z-index: 9;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding-right: 100%;
+  padding-bottom:0.5px ;
+  
 }
-.top {
+.tapi {
+  top: 10px;
   padding: 10px 10vw;
   display: flex;
   justify-content: space-between;
 }
-.brand-logo {
-      height: 127px;
+.brandis {
+  height: 127px;
 }
-.nav-items{
-    display:flex;
-    align-items:center;
+.nav-ii {
+  display: flex;
+  align-items: center;
 }
-.search{
-    width:500px;
-    display:flex;
+.sear {
+  width: 500px;
+  display: flex;
 }
-.search-box{
-    width:80%;
-    height:50px;
-    padding:20px;
-    border-top-left-radius: 17px;
-    border: 1px solid #000000;
-    
-    font-size: medium;
-    background:none;
-    color:#000000;
-    outline:none;
+.search-b {
+  width: 75%;
+  height: 8px;
+  padding: 20px;
+  border-top-left-radius: 15px;
+  border: 1px solid #000000;
+  text-transform: capitalize;
+  font-size: x-large;
+  background: none;
+  color: #181925;
+  outline: none;
 }
-.search-btn{
-    width:20%;
-    height:50px;
-    padding:10px 20px;
-    border:none;
-    outline:none;
-    cursor:pointer;
-    background: #181925;
-    color:#fff;
-    
-    font-size:15px;
-    border-top-right-radius:10px;
-    border-bottom-right-radius:10px;
+.search-bt {
+  width: 20%;
+  height: 50px;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #181925;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 15px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
-.nav-items a{
-    margin-left: 20px;
+.nav-ii a {
+  margin-left: 20px;
 }
-.nav-items a img{
-    width:30px;
+.nav-ii a img {
+  width: 30px;
 }
-.links-container {
-    width:100%;
-    display:flex;
-    padding:10px 10vw;
-    justify-content: center;
-    list-style: none;
-    border-top:1px solid #d1d1d1;
+.lin-container {
+  width: 78%;
+  display: flex;
+  padding: 10px 10vw;
+  justify-content: center;
+  list-style: none;
+  border-top: 1px solid #d1d1d1;
 }
-.link {
-    padding: 8px 16px;
-    margin: 11px 0px;
-    font-size: 22px;
-    text-decoration: none;
-    color: #000000;
-    opacity: 14.5;
-    transition: 0.5s;
+.li {
+  padding: 8px 16px;
+  margin: 11px 0px;
+  font-size: 22px;
+  text-decoration: none;
+  color: #000000;
+  opacity: 14.5;
+  transition: 0.5s;
 }
- .link:hover{
-    color:red;
-    opacity:1;
+.li:hover {
+  color: red;
+  opacity: 1;
 }
-.hero-section{
-    width: 100%;
-    height: calc(100vh - 120px);
-    background-image: url('/images/cart_8.jpg');
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hero-section {
+  width: 111%;
+  height: calc(100vh - 120px);
+  background-image: url("/images/cart_8.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /* 
 .hero-section .logo{
@@ -175,7 +136,6 @@ export default {
     display: block;
     margin: auto;
 }
-
 .hero-section .sub-heading{
     margin-top: 10px;
     text-align: center;
