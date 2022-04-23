@@ -1,32 +1,17 @@
 <template>
-  <!-- <div>
-    <h1>Register</h1>
-    <input type="text" name="name" v-model="name" />
-    <input type="email" name="email" v-model="email" />
-    <input type="password" name="password" v-model="password" />
-    <div v-if="!image">
-      <h2>Select an image</h2>
-      <input type="file" @change="onFileChange" />
-    </div>
-    <div v-else>
-      <img :src="image" />
-      <button @click="removeImage">Remove image</button>
-    </div>
-    <button @click="register">registrer</button>
-  </div> -->
   <div class="conti">
     <div class="left"></div>
     <div class="right">
     <h1 style="color:#b64b20">Registration</h1>
-    <form>
+    <div>
       <p>Fill your name</p>
-      <input type="text" placeholder="Your Name..." class="nwme">
+      <input type="text" placeholder="Your Name..." class="nwme" name="name" v-model="name" >
       <p>Email</p>
-      <input type="email" placeholder="@gmail.com" class="nwme">
+      <input type="email" placeholder="@gmail.com" class="nwme" name="email" v-model="email">
       <p>Password</p>
-      <input type="password" placeholder="Your Name" class="nwme">
+      <input type="password" placeholder="Your Password..." class="nwme" name="password" v-model="password">
       <p>Confirm Password</p>
-      <input type="password" placeholder="Your Name" class="nwme"><br/>
+      <input type="password" placeholder="Your Password..." class="nwme"><br/>
           <div v-if="!image">
             <h2 class="textoo">Select your image</h2>
             <input type="file" @change="onFileChange" class="files"/>
@@ -34,8 +19,14 @@
           <div v-else>
             <img :src="image" class="imaget" />
           </div>
-      <router class="btna" >Submit</router>
-    </form>
+      <button @click="register" class="btna">registrer</button>
+    </div>
+    <span class="span-span"
+                >login
+                <router-link href="" class="a-a" to="/Signin"
+                  >login</router-link
+                ></span
+              >
     </div>
   </div>
 </template>
@@ -46,7 +37,7 @@ export default {
   name: "Signup",
   data() {
     return {
-      name: "",
+      username: "",
       email: "",
       password: "",
       image: "",
@@ -55,8 +46,8 @@ export default {
   methods: {
     register() {
       axios
-        .post("http://localhost:5000/signup", {
-          username: this.name,
+        .post("/signup", {
+          username: this.username,
           email: this.email,
           image: this.image,
           password: this.password,

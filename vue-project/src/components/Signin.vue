@@ -1,4 +1,12 @@
 <template>
+           <!-- <div>
+    <h1>Signin</h1>
+    <input type="email" name="email" v-model="email" />
+    <input type="password" name="password" v-model="password" />
+    <button @click="login">registrer</button><br/>
+  {{data}}
+    <img v-if="boolean" v-bind:src="`${imgsrc}`"/>   
+   </div>  -->
   <body>
     <div class="login-root">
       <div
@@ -118,7 +126,7 @@
             <div class="formbg">
               <div class="formbg-inner padding-horizontal--48">
                 <span class="padding-bottom--15">Sign in to your account</span>
-                <form id="stripe-login">
+                <div id="stripe-login">
                   <div class="field padding-bottom--24">
                     <label class="label-label" for="email">Email</label>
                     <input
@@ -154,13 +162,15 @@
                     >
                       Continue</button
                     ><br />
-                    {{ data }}
-                    <img v-if="boolean" v-bind:src="`${imgsrc}`" />
+                    
+                    <!-- <router-link>hello</router-link> -->
                   </div>
                   <div class="field"></div>
-                </form>
+                </div>
               </div>
             </div>
+            div{{ data }}
+                    <img v-if="boolean" v-bind:src="`${imgsrc}`" />
             <div class="footer-link padding-top--24">
               <span class="span-span"
                 >Don't have an account?
@@ -184,6 +194,11 @@
       </div>
     </div>
   </body>
+  <div>
+    {{ data }}
+                    <img v-if="boolean" v-bind:src="`${imgsrc}`" />
+  </div>
+
 </template>
 
 <script>
@@ -202,23 +217,24 @@ export default {
   methods: {
     login() {
       axios
-        .post("http://localhost:5000/login", {
+        .post("/login", {
           email: this.email,
           password: this.password,
         })
         .then(() => {
           axios
-            .post("http://localhost:5000/getUserinfo", {
+            .post("/getUserinfo", {
               email: this.email,
             })
             .then((result) => {
               this.data = result.data[0];
               this.imgsrc = result.data[1];
               this.boolean = true;
+              console.log(result.data,"success");
             });
         })
         .catch((err) => {
-          console.log(err);
+          console.log(err,"You have an error");
         });
     },
   },
@@ -443,3 +459,4 @@ export default {
   }
 }
 </style>
+

@@ -9,7 +9,6 @@
         <router-link class="nav-link" to="/UnderNav">Home</router-link>
         <a href="#gallery">Products</a>
         <router-link class="nav-link" to="/Review">Review</router-link>
-        <a href="#gallery">Order</a>
         <router-link href="#order" to="/Signin">Login</router-link>
       </nav>
     </header>

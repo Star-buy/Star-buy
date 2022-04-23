@@ -32,8 +32,14 @@
   </div>
 </template>
 <script>
+import axios from "axios";
 export default{
     name:"UnderNav", 
+
+    data(){
+      axios.get("",)
+    }
+
 }
 </script>
 

@@ -26,12 +26,11 @@ app.use(fileUpload());
 app.use(cors());
 /********************** Routes **********************/
 //ToDo
-app.get("/",(req,res)=>{res.render("/../vue-project/dist"),{}})
 app.use("/", reviewRoutes);
 app.use("/", registrer);
 app.use("/",admin)
 
-const port = process.env.PORT || 3001;
+const port = 5000;
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });

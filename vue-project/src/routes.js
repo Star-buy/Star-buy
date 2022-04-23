@@ -20,16 +20,17 @@ const routes =[
         name:"Review",
         component:Review
     },
-    {
-        path: "/Signin", 
-        name:"Signin",
-        component:Signin
-    },
+   
     {
          path: "/Signup", 
          name:"Signup",
          component:Signup
     },
+    {
+        path: "/Signin", 
+        name:"Signin",
+        component:Signin
+   },
 ];
 
 const router=createRouter({
