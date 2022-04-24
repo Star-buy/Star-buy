@@ -10,8 +10,8 @@
 <script>
 
 // import UnderNav from "./components/UnderNav.vue";
- import Footer from "./components/Footer.vue";
- import Navbar from "./components/Navbar.vue"
+ import Footer from "./components/vues/Footer.vue";
+ import Navbar from "./components/vues/Navbar.vue"
 
 export default {
   name: "App",

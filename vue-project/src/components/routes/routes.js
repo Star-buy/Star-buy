@@ -1,9 +1,9 @@
 import {createWebHistory,createRouter} from "vue-router"
-import UnderNav from "./components/UnderNav.vue"
-import Review from "./components/Review.vue"
-import Footer from "./components/Footer.vue"
-import Signin from "./components/Signin.vue"
-import Signup from "./components/Signup.vue"
+import UnderNav from "../vues/UnderNav.vue"
+import Review from "../vues/Review.vue"
+import Footer from "../vues/Footer.vue"
+import Signup from "../vues/Signin.vue"
+import Signin from "../vues/Signin.vue"
 const routes =[
     {
         path: "/UnderNav", 
