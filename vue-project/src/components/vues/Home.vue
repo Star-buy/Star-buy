@@ -1,7 +1,7 @@
 <template>
   <div class="hero">
     <div class="co">
-        <img src="images/light-logo.png" class="logoo" alt="">
+        <img src="/images/light.png" class="logoo" alt="">
         <p class="sub">best fashion collection of all time</p>
     </div>
 </div>
