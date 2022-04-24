@@ -23,17 +23,19 @@
         <li class="li-item"><a href="#" class="li">Accessories</a></li>
       </ul>
     </nav>
-    <div class="hero-section">
-      <div class="content">
-        <!-- <img src="/images/logo-websites-31330.png" class="logo" alt="">
-        <p class="sub-heading">best fashion collection of all time</p> -->
-      </div>
-    </div>
   </div>
+  <Card/>
+  <Accessories/>
 </template>
 <script>
+import Card from "./Card.vue";
+import Accessories from "./Accessories.vue";
 import axios from "axios";
 export default{
+  components:{
+    Card,
+     Accessories
+  },
     name:"UnderNav", 
 
     data(){
@@ -53,7 +55,6 @@ export default{
   left: 0;
   right: 0;
   z-index: 1000;
-  padding-right: 100%;
   padding-bottom:0.5px ;
   
 }
@@ -77,7 +78,7 @@ export default{
 .search-b {
   width: 75%;
   height: 8px;
-  padding: 20px;
+  padding: 24px;
   border-top-left-radius: 15px;
   border: 1px solid #000000;
   text-transform: capitalize;

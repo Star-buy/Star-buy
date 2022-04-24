@@ -61,7 +61,7 @@ export default {
 <style>
 footer{
     position: relative;
-    width: 80%;
+    width: 100%;
     padding: 40px 10vw;
     padding-bottom: 80px;
     background: #131313;

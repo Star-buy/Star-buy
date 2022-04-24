@@ -2,7 +2,7 @@
   <div class="conti">
     <div class="left"></div>
     <div class="right">
-    <h1 style="color:#b64b20">Registration</h1>
+    <h1 style="color:#b64b20">Registration</h1><br/>
     <div>
       <p>Fill your name</p>
       <input type="text" placeholder="Your Name..." class="nwme" name="name" v-model="name" >
@@ -83,7 +83,7 @@ export default {
 .conti {
   width: 900px;
   height: 700px;
-  margin: 82px auto;
+  margin: 93px auto;
   box-sizing:border-box;
   background-color: #181925;
   padding: 25px 100px;
@@ -111,13 +111,13 @@ export default {
   
   
 }
-.nwme{
+.nwme {
     width: 82%;
-    height: 38px;
+    height: 53px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 3px;
-    padding-left: 20px;
+    border-radius: 11px;
+    margin-bottom: 16px;
+    padding-left: 18px;
 }
 .btna{
   width:130px;

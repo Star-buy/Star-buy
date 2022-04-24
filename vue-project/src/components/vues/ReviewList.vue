@@ -70,6 +70,7 @@ export default {
   font-size: 2.1rem;
   color: rgb(150, 150, 150);
   font-style: italic;
+  margin: 44px auto;
 }
 .reviews {
   margin: 2rem auto;

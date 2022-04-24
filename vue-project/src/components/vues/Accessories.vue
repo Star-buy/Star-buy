@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style>
-/* .collection-container{
+ .collection-container{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -50,5 +50,5 @@ export default {
 .collection:nth-child(3){
     grid-column: span 2;
     margin-bottom: 10px;
-} */
+} 
 </style>

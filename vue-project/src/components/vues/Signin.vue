@@ -1,5 +1,5 @@
 <template>
-           <!-- <div>
+  <!-- <div>
     <h1>Signin</h1>
     <input type="email" name="email" v-model="email" />
     <input type="password" name="password" v-model="password" />
@@ -104,24 +104,12 @@
         >
           <div
             class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center"
-          >
-            <h1 class="h1-h1">
-              <a
-                href="http://blog.stackfindover.com/"
-                rel="dofollow"
-                class="a-a"
-                >Star-buy</a
-              >
-            </h1>
-          </div>
-          <!-- <div>
-    <h1>Signin</h1>
-    <input type="email" name="email" v-model="email" />
-    <input type="password" name="password" v-model="password" />
-    <button @click="login">registrer</button><br/>
-  {{data}}
-    <img v-if="boolean" v-bind:src="`${imgsrc}`"/>   
-   </div> -->
+          ></div>
+          <h1 class="h1-h1" style="text-align: center">
+            <a href="http://blog.stackfindover.com/" rel="dofollow" class="a-a"
+              >Star-buy</a
+            >
+          </h1>
           <div class="formbg-outer">
             <div class="formbg">
               <div class="formbg-inner padding-horizontal--48">
@@ -162,7 +150,7 @@
                     >
                       Continue</button
                     ><br />
-                    
+
                     <!-- <router-link>hello</router-link> -->
                   </div>
                   <div class="field"></div>
@@ -170,7 +158,7 @@
               </div>
             </div>
             div{{ data }}
-                    <img v-if="boolean" v-bind:src="`${imgsrc}`" />
+            <img v-if="boolean" v-bind:src="`${imgsrc}`" />
             <div class="footer-link padding-top--24">
               <span class="span-span"
                 >Don't have an account?
@@ -196,9 +184,8 @@
   </body>
   <div>
     {{ data }}
-                    <img v-if="boolean" v-bind:src="`${imgsrc}`" />
+    <img v-if="boolean" v-bind:src="`${imgsrc}`" />
   </div>
-
 </template>
 
 <script>
@@ -230,11 +217,11 @@ export default {
               this.data = result.data[0];
               this.imgsrc = result.data[1];
               this.boolean = true;
-              console.log(result.data,"success");
+              console.log(result.data, "success");
             });
         })
         .catch((err) => {
-          console.log(err,"You have an error");
+          console.log(err, "You have an error");
         });
     },
   },
@@ -326,6 +313,7 @@ export default {
 }
 .padding-horizontal--48 {
   padding: 48px;
+  margin: 18px auto;
 }
 .padding-bottom--15 {
   padding-bottom: 15px;
@@ -413,8 +401,9 @@ export default {
   margin: 0;
 }
 .footer-link .span-span {
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
+  margin-top: -29px;
 }
 .listing .a-a {
   color: #697386;
@@ -459,4 +448,3 @@ export default {
   }
 }
 </style>
-
