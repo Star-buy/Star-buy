@@ -91,7 +91,7 @@ discount:'',
 gender:''
    } 
    },
- 
+ /
  mounted(){
          axios.get('http://localhost:5000/admin')
          .then((result)=>{
