@@ -1,57 +1,58 @@
 <template>
   <section class="product">
-
     <h2 class="product-category">Selling</h2>
     <div class="product-container">
-    <div  v-for="post in posts" :key="post.id" class="product-card">
+      <div v-for="post in posts" :key="post.id" class="product-card">
         <div class="product-image">
-            <span class="discount-tag">20% off</span>
-            <img :src="post.image" class="product-thumb">
-            <button class="card-btn" @click="displayPost" >add to whislist</button>
+          <span class="discount-tag">20% off</span>
+          <img :src="post.image" class="product-thumb" />
+          <button class="card-btn" @click="displayPost">add to whislist</button>
         </div>
         <div class="product-info">
-            <h2  class="product-brand" > {{post.title}} </h2>
-            <p class="product-short-des"  > {{post.description}} </p>
-            <span  class="price">${{post.price}} </span><span class="actual-price">$40</span>
+          <h2 class="product-brand">{{ post.title }}</h2>
+          <p class="product-short-des">{{ post.description }}</p>
+          <span class="price">${{ post.price }} </span
+          ><span class="actual-price">$40</span>
         </div>
+      </div>
     </div>
-</div>
-<button @click='displayPost' >as</button>
-</section>
+    <button @click="displayPost" class="btn">Show All Cards</button>
+  </section>
 </template>
 
 <script>
-import axios from "axios"
+
+import axios from "axios";
 export default {
-data() {
-   return{
-      data:null,
-      imgsrc:null,
-      boolean:false,
-posts:[] 
-   }
-   },
-methods:{
-    displayPost(){
-        axios.get('http://localhost:5000/admin').then((result)=>{
-         this.posts= result.data
-            }
-            )
-            .catch((error)=>{console.log(error)})
-
-    },
-      mounted() {
-    this.displayPost();
+  name: "Card",
+  data() {
+    return {
+      data: null,
+      imgsrc: null,
+      boolean: false,
+      posts: [],
+    };
   },
-
-
-}
-
-}
+  methods: {
+    displayPost() {
+      axios
+        .get("http://localhost:5000/admin")
+        .then((result) => {
+          this.posts = result.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    mounted() {
+      this.displayPost();
+    },
+  },
+};
 </script>
 
 <style>
-section{
+ section{
     background-color:#e5e8f6;
 }
 .product{
@@ -73,7 +74,7 @@ section{
     padding: 0 10vw;
     display: flex;
     overflow-x: auto;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; 
 }
 
 .product-container::-webkit-scrollbar{
@@ -172,5 +173,5 @@ section{
         font-weight: 900;
     font-size: 20px;
     color :red;
-}
+}  
 </style>

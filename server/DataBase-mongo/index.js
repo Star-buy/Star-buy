@@ -1,8 +1,10 @@
+
 var mongoose = require("mongoose");
 var mongoUri = "mongodb://localhost/test";
 
+
 mongoose.connect(mongoUri, { useUnifiedTopology: true, useNewUrlParser: true }, () => {
-  console.log("db connected");
+  console.log("Connected to dataBase MongoDB");
 });
 var db = mongoose.connection;
 
