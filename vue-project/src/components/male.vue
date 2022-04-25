@@ -9,7 +9,6 @@
             <span class="discount-tag" v-if='post.discount' > {{post.discount}}% off</span>
             <img :src="post.image" class="product-thumb">
             <button class="card-btn" @click="showdata(post)" >add to whislist</button><br/>
-            <button class="card-btn" @click="deleteitem(post.id)" >delete</button>
         </div>
         <div class="product-info">
             <h2  class="product-brand"> {{post.title}} </h2>
@@ -43,23 +42,12 @@ posts:[],
 payment
    },
    mounted(){
-         axios.get('http://localhost:5000/admin')
+         axios.get('http://localhost:5000/male')
          .then((result)=>{
           this.posts= result.data
              } )
              .catch((error)=>{console.log(error)})
   },
-  methods: {
-      showdata(post) {
-          this.index1= post.title
-          this.index2= post.image
-          this.price= post.price-(post.price * post.discount / 100)
-          this.boolean=true
-      },
-     deleteitem(postId){
-    axios.delete('http://localhost:5000/'+`${postId}`).then(()=>{window.location.reload()}).catch((err)=>{console.log(err)})
-     },
-  }
 }
 
 </script>

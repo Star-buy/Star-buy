@@ -10,17 +10,24 @@ import UnderNav from "./components/UnderNav.vue"
 import Accessories from "./components/Accessories.vue"
 import adminpart from "./components/adminpart.vue"
 import Footer from "./components/Footer.vue"
+import payment from "./components/payment.vue"
+import female from "./components/female.vue"
+import male from "./components/male.vue"
+import kids from "./components/kids.vue"
 </script>
 
 <template>
 <div>
-   <adminpart/>
- <main><adminp/> </main> 
-   <UnderNav/>
-   <Card/>
+ <adminpart/>
+<Card/>
 
-<Accessories/>
-<Footer/>   
+ <!-- <Navbar/>
+ <UnderNav/>
+ <Accessories/> 
+ <Card/>
+ <signin/>
+ <Footer/>   -->
+
 </div>
 </template>  
 

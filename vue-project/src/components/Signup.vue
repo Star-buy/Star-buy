@@ -29,6 +29,9 @@ export default {
   },
   methods: {
     register() {
+              if(this.name && this.email && this.password ){
+
+      if(this.image){
       axios
         .post("http://localhost:5000/signup", {
           username: this.name,
@@ -38,10 +41,29 @@ export default {
         })
         .then((result) => {
           console.log(result.data);
+          alert(result.data)
         })
         .catch((err) => {
           console.log(err);
-        });
+          alert('registrer failed')
+        })}else{
+          axios
+        .post("http://localhost:5000/signup", {
+          username: this.name,
+          email: this.email,
+          password: this.password,
+        })
+        .then((result) => {
+          console.log(result.data);
+          alert(result.data)
+        })
+        .catch((err) => {
+          console.log(err);
+          alert('registrer failed')
+        })
+        }}else{
+          alert('fill all the fields')
+        }
     },
     onFileChange(e) {
       var files = e.target.files;
@@ -62,7 +84,9 @@ export default {
     },
   },
 };
+
 </script>
+
 <style>
 #app {
   text-align: center;

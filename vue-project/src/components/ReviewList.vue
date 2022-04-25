@@ -14,9 +14,10 @@
         <div class="desc-review">{{review.description}}</div>
         </div>
       </div>
+       <h1 v-if="Boolean" style="color:red" > You can check the by clicking in this button below</h1>
+  <button @click="getReviews" >Vue All Feedbacks</button>
     </div>
-    <h1 v-if="Boolean" style="color:red" > You can check the by clicking in this button below</h1>
-  <button @click="getReviews">Vue All Feedbacks</button>
+   
 </template>
 
 <script>
@@ -32,16 +33,13 @@ export default {
   methods: {
     getReviews() {
       axios
-        .get("/test")
+        .get("http://localhost:5000/test")
         .then((response)=>{
-            console.log(response); 
             this.reviews = response.data;
-            this.Boolean=false;
              console.log(response.data,"wehifbkj");
         })
         .catch((error) => {
           console.log(error);
-          this.Boolean=false;
         });
     },
   },

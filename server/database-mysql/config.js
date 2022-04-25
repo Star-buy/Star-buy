@@ -12,7 +12,8 @@ module.exports = (db) => {
       username VARCHAR(255) NOT NULL,
       email VARCHAR(255) NOT NULL, 
       image VARCHAR(255) ,
-      password VARCHAR(255) NOT NULL 
+      password VARCHAR(255) NOT NULL,
+      role VARCHAR(10) 
     );`
     )
     .error(err => {
@@ -24,7 +25,9 @@ module.exports = (db) => {
       title VARCHAR(255) NOT NULL,
       description VARCHAR(255), 
       image VARCHAR(255) ,
-      price int NOT NULL 
+      price int NOT NULL,
+      discount int ,
+      gender VARCHAR(10) 
     );`
     )
     .error(err => {
