@@ -121,12 +121,13 @@
                       class="input-input"
                       type="email"
                       name="email"
+                      placeholder="@gmail.com"
                       v-model="email"
                     />
                   </div>
                   <div class="field padding-bottom--24">
                     <div class="grid--50-50">
-                      <label class="label-label" for="password">Password</label>
+                      <label class="label-label" for="password" >Password</label>
                       <div class="reset-pass">
                         <a class="a-a" href="#">Forgot your password?</a>
                       </div>
@@ -135,6 +136,7 @@
                       class="input-input"
                       type="password"
                       name="password"
+                      placeholder="Put your password..."
                       v-model="password"
                     />
                   </div>

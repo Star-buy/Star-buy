@@ -31,12 +31,12 @@
       <br />
       <div>
         <p>Title</p>
-        <input type="text" name="title" v-model="title" class="nwme-ne" />
+        <input type="text" name="title" v-model="title" class="nwme-ne" placeholder="Product name..."/>
         <p>Price</p>
-        <input type="text" name="desc" v-model="price" class="nwme-ne" />
+        <input type="text" name="desc" v-model="price" class="nwme-ne" placeholder="Product Price..."/>
         <p>Description</p>
 
-        <textarea type="text" name="desc" v-model="description" style="width: 100%">
+        <textarea type="text" name="desc" v-model="description" style="width: 100%" placeholder="Product description...">
         </textarea>
         <input />
         <br />
