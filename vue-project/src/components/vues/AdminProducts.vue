@@ -1,4 +1,5 @@
 <template>
+<div>
   <div>
     <div class="side-menu">
       <div class="brand-name">
@@ -34,59 +35,86 @@
         <input type="text" name="title" v-model="title" class="nwme-ne" placeholder="Product name..."/>
         <p>Price</p>
         <input type="text" name="desc" v-model="price" class="nwme-ne" placeholder="Product Price..."/>
+<p>discount</p>
+
+                    <input type="text" placeholder='discount'  class="nwme-ne"  v-model="discount" /><br/>
+
         <p>Description</p>
 
-        <textarea type="text" name="desc" v-model="description" style="width: 100%" placeholder="Product description...">
+        <textarea type="text" name="desc" v-model="description"  style="width: 100%" placeholder="Product description...">
         </textarea>
+
         <input />
         <br />
         <div v-if="!image">
           <h2 class="textoo-o">Select your image</h2>
           <input type="file" @change="onFileChange" class="files" />
+          
         </div>
+        
         <div v-else>
           <img :src="image" class="imaget-t" />
-        </div>
+        </div><br/>
+          <select  @change="change($event)"  name="gender">
+	<option value="none" selected>Gender</option>
+	<option  value="male">Male</option>
+	<option  value="female">Female</option>
+	<option  value="kids">kids</option>
+</select>
         <button @click="post" class="btna">Add</button>
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
-import axios from "axios";
+import axios from "axios"
 export default {
-  name: "AdminProducts",
-  data() {
-    return {
-      data: null,
-      imgsrc: null,
-      boolean: false,
-      title: "",
-      description: "",
-      image: "",
-      price: "",
-    };
+data() {
+   return{
+   
+      data:null,
+      imgsrc:null,
+      boolean:false,
+title:'',
+description:'',
+image:'',
+price:'',
+discount:'',
+gender:''
+   }
+},
+methods: {
+  change(e){
+    var g = e.target.value
+    this.gender = g
   },
-  methods: {
-    post() {
-      axios
-        .post("http://localhost:5000/admin", {
-          title: this.title,
-          description: this.description,
-          image: this.image,
-          price: this.price,
-        })
-        .then((result) => {
-          console.log(result.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-    onFileChange(e) {
+   post(){
+     if(this.title && this.description && this.image && this.price){
+   axios.post('http://localhost:5000/admin',{  
+      title: this.title,
+      description: this.description,
+      image:this.image,
+      price:this.price,
+      discount:this.discount,
+      gender:this.gender
+   }).then((result) => {
+    alert(result.data)
+    window.location.reload()
+    })
+    .catch(err => {
+        console.log(err)
+    })
+    }else{
+      alert('please fill all the fields')
+    }
+   },
+
+  onFileChange(e) {
       var files = e.target.files;
-      if (!files.length) return;
+      if (!files.length)
+        return;
       this.createImage(files[0]);
     },
     createImage(file) {
@@ -99,10 +127,10 @@ export default {
       reader.readAsDataURL(file);
     },
     removeImage: function (e) {
-      this.image = "";
-    },
-  },
-};
+      this.image = '';
+    }}
+}
+
 </script>
 
 <style>

@@ -6,15 +6,31 @@ import Footer from "../vues/Footer.vue";
 import Signup from "../vues/Signup.vue";
 import Signin from "../vues/Signin.vue";
 import AdminPart from "../vues/AdminPart.vue";
-import Posts from "../vues/Posts.vue";
-import Post from "../vues/Post.vue";
+// import Post from "../vues/Post.vue";
 import AdminProducts from "../vues/AdminProducts.vue";
+import AdminData from "../vues/AdminData.vue";
+import Male from "../vues/Male.vue";
+import Female from "../vues/Female.vue";
+import Kids from "../vues/Kids.vue";
 import Home from "../vues/Home.vue";
 const routes = [
   {
     path: "/UnderNav",
     name: "UnderNav",
     component: UnderNav,
+  },
+  {
+    path: "/Male",
+    name: "Male",
+    component: Male,
+  },  {
+    path: "/Female",
+    name: "Female",
+    component: Female,
+  },  {
+    path: "/Kids",
+    name: "Kids",
+    component: Kids,
   },
   {
     path: "/Footer",
@@ -26,7 +42,11 @@ const routes = [
     name: "Review",
     component: Review,
   },
-
+{
+  path: "/AdminData",
+  name: "AdminData",
+  component: AdminData,
+},
   {
     path: "/Signup",
     name: "Signup",
@@ -41,16 +61,6 @@ const routes = [
     path: "/AdminPart",
     name: "AdminPart",
     component: AdminPart,
-  },
-  {
-    path: "/Posts",
-    name: "Posts",
-    component: Posts,
-  },
-  {
-    path: "/Post",
-    name: "Post",
-    component: Post,
   },
   {
     path: "/AdminProducts",

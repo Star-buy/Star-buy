@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="lll">
     <h1 v-if="Boolean" style="color:#ff621e">
       You can check the by clicking in this button below
@@ -17,8 +18,8 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
-
 <script>
 import axios from "axios";
 export default {
@@ -47,7 +48,6 @@ export default {
   },
 };
 </script>
-
 <style>
 .lll{
      text-align: center;
@@ -94,7 +94,6 @@ export default {
   border-radius: 50%;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
-
 .body-review {
   background-color: rgb(238, 238, 238);
   padding: 2.5rem;
@@ -120,7 +119,6 @@ export default {
   letter-spacing: 1px;
   color: rgb(150, 150, 150);
 }
-
 @media (max-width: 678px) {
   .review {
     margin-top: 1.5rem;
@@ -129,7 +127,7 @@ export default {
 .buttom {
   display: inline-block;
   border-radius: 4px;
-  background-color: #f4511e;
+  background-color: #F4511E;
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -140,14 +138,12 @@ export default {
   cursor: pointer;
   margin: 5px;
 }
-
 .buttom span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
-
 .buttom span:after {
   content: '\00bb';
   position: absolute;
@@ -156,11 +152,9 @@ export default {
   right: -20px;
   transition: 0.5s;
 }
-
 .buttom:hover span {
   padding-right: 25px;
 }
-
 .buttom:hover span:after {
   opacity: 1;
   right: 0;

@@ -18,8 +18,8 @@ router.get("/test", (req, res) => {
 
 router.post('/test', upload.single("image"), async (req,res) => {
    try{
-   const image=req.body.image
-   const result = await cloudinary.uploader.upload(image);
+   const img=req.body.image
+   const result = await cloudinary.uploader.upload(img);
    //create instance of user review
    let user = new Review({
     name: req.body.name,
