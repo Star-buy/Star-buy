@@ -130,9 +130,9 @@ const deleteitem = (id, callback) => {
   });
 };
 
-const updateitem = (id,title, description, image, price, gender, callback) => {
-  const sql = "UPDATE  items SET ? WHERE id = ?"
-  connection.query(sql, [title, description, image, price, gender],(err, result)=>{
+const updateitem = (  id ,title, description, image, price,discount, gender, callback) => {
+  const sql = "UPDATE items SET title = ? , description = ?, image = ?, price = ?,discount=?, gender = ? WHERE id = ?;"
+  connection.query(sql, [title, description, image, price,discount, gender,id],(err, result)=>{
     callback(err, result);
   })
 }

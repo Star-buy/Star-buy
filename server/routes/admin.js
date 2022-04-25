@@ -52,14 +52,15 @@ router.get('/admin',(req, res)=>{
    })
  })
 
-router.patch('/:id',async (req, res)=>{
+router.put('/:id',async (req, res)=>{
+  const id = req.params.id 
   const { title, description, image, price,discount,gender } = req.body;
   const response = await cloudinar.uploader.upload(
     image,
     async function (error, result) {
       if(error){res.send(error)}
       const image = result.secure_url;
-      postItemwithdisc(title, description, image, price,discount,gender, (err, result) => {
+      updateitem(id,title, description, image, price,discount,gender, (err, result) => {
         if (err) {
           res.send(err);
         }

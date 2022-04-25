@@ -1,36 +1,31 @@
-<script setup>
-
-import Review from "./components/Review.vue"
-import Signin from "./components/Signin.vue"
-import Signup from "./components/Signup.vue"
-import Card from "./components/Card.vue"
-import ReviewList from "./components/ReviewList.vue"
-import Navbar from "./components/Navbar.vue"
-import UnderNav from "./components/UnderNav.vue"
-import Accessories from "./components/Accessories.vue"
-import adminpart from "./components/adminpart.vue"
-import Footer from "./components/Footer.vue"
-import payment from "./components/payment.vue"
-import female from "./components/female.vue"
-import male from "./components/male.vue"
-import kids from "./components/kids.vue"
-</script>
-
 <template>
 <div>
- <adminpart/>
-<Card/>
+  <div>
+   <main><Navbar /></main> 
+    <router-view/>
+  </div>
+  <div> 
+    <AdminPart/>
+  </div>
+  <div>
+    <UnderNav/>
+  </div>
+  </div>
+</template>
 
- <!-- <Navbar/>
- <UnderNav/>
- <Accessories/> 
- <Card/>
- <signin/>
- <Footer/>   -->
+<script>
+                                                    
+// import UnderNav from "./components/UnderNav.vue";
+ import Footer from "./components/vues/Footer.vue";
+ import Navbar from "./components/vues/Navbar.vue"
+ import Post from "./components/vues/Post.vue"
+ import UnderNav from "./components/vues/UnderNav.vue"
+export default {
+  name: "App",
+  components: {
+     Navbar,
+},
+};
+</script>
 
-</div>
-</template>  
-
-<style>
-
-</style>
+<style></style>

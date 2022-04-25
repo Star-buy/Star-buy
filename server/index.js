@@ -32,9 +32,9 @@ app.use("/", reviewRoutes);
 app.use("/", registrer);
 app.use("/", admin);
 app.use("/", payment);
-app.use('/',filter)
+app.use("/", filter);
 
-const port = process.env.PORT || 5000;
+const port = 5000;
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
