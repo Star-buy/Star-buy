@@ -12,7 +12,7 @@
         <div class="product-info">
             <h2  class="product-brand" > {{post.title}} </h2>
             <p class="product-short-des"  > {{post.description}} </p>
-            <span  class="price">${{post.price}} </span><span class="actual-price">$40</span>
+            <span  class="price">{{post.price}}TND</span><span class="actual-price"></span>
         </div>
     </div>
 </div>
@@ -93,6 +93,13 @@ section{
     height: 350px;
     overflow: hidden;
 }
+.product-image:hover{
+    width: 120%;
+    height: 370px;
+    border-radius: 15px;
+    cursor: pointer;
+  
+  }
 
 .product-thumb{
     width: 100%;

@@ -7,21 +7,25 @@ import ReviewList from "./components/ReviewList.vue"
 import Navbar from "./components/Navbar.vue"
 import UnderNav from "./components/UnderNav.vue"
 import Accessories from "./components/Accessories.vue"
-import adminpart from "./components/Adminpart.vue"
+import Adminpart from "./components/Adminpart.vue"
 
 </script>
 
 <template>
+<div>
+    <!-- <Navbar/>
+    <UnderNav/> -->
+    <Adminpart/>
+     <Card/>
+    
+    <!-- <Review/>
+    <Reviewlist/>
+    <Signin/>
+    <Signup/>
+    <Footer/> --> -->
 
- <main> <Card/></main>
-
-
-<Footer/>
- <!-- <Signin/> 
- <Signup/>  -->
- <!-- <Review/>
- <ReviewList/> -->
- <!-- <Card/> -->
+</div>
+ 
 </template>
 
 <style>

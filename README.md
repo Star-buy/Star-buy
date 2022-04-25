@@ -1,3 +1,11 @@
+
+# Star-Buy
+
+ -hello
+
+ -this is an E-commerce Application allowing users to buy different products online.
+
+ 
 # Welcome to Star-Buy! ✨
 
 - E-commerce App 👨‍💻
@@ -36,13 +44,12 @@
 
 - Authentication (Signup, Login, Reset Password).
 - Real time update.
-- User Profile (Upload, Edit Profile Picture, Address).
-- Add Items to Cart, to wishlist.
-- Place an Order.
+- User Profile (Upload, Edit Profile Picture, Address). /update not yet
+- Add Items to Cart, to wishlist./ almost.
+- Place an Order./
 - Payment Methods: cash, cashapp, credit card.
-- Push notification to user whenever order status, user information change.
-- Send email for reseting password as well as update order information.
-- Share Products to Social Media.
+- Push notification to user whenever order status, user information change./on wait
+- Send email for reseting password as well as update order information./on wait
 - Review, Comment, Rating Product (In Processing).
 
 
@@ -68,3 +75,4 @@
 - Pull requests are warmly welcome. 
 
 - Thanks a lot. 👨‍💻
+
