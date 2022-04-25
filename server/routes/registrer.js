@@ -2,13 +2,13 @@ const {
   getAllNames,
   getAllEmails,
   signup,
-  get,
   getPasswordByEmail,
-  getUserName
+  getUserName,
 } = require("../database-mysql/index");
 
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
+
 const cloudinary = require("../utils/cloudinary");
 var cloudinar = require('cloudinary');
 var cloudinar = require('cloudinary').v2;

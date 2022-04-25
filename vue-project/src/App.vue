@@ -1,20 +1,24 @@
-<script setup>
-import Navbar from "./components/Navbar.vue";
-import UnderNav from "./components/UnderNav.vue";
-import Card from "./components/Card.vue";
-import Accessories from "./components/Accessories.vue";
-import Footer from "./components/Footer.vue"
-</script>
-
 <template>
-
-<main> <Navbar/></main>
-<UnderNav/>
-<Card/>
-<Accessories/>
-<Footer/>
+  <div>
+   <main><Navbar /></main> 
+    <router-view/>
+  </div>
+  <div> 
+    <AdminPart/>
+  </div>
 </template>
 
-<style>
+<script>
 
-</style>
+// import UnderNav from "./components/UnderNav.vue";
+ import Footer from "./components/vues/Footer.vue";
+ import Navbar from "./components/vues/Navbar.vue"
+export default {
+  name: "App",
+  components: {
+    Navbar,
+},
+};
+</script>
+
+<style></style>

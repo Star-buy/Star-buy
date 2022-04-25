@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+# Star-buy
+ -hello 
+ -this is an E-commerce Application allowing users to buy different products online.
+
+<<<<<<< HEAD
+ - hello from alaa
+ kd2olnfouln32fm
+- sirrrrrrrrrine
+=======
+-omar was here
+-cyrine was here
+- next
+- siriine
+>>>>>>> d89fe6c62cb470b80d2197aeae946a0defa5852c
+=======
 # Welcome to Star-Buy! ✨
 
 - E-commerce App 👨‍💻
@@ -29,6 +45,9 @@
 
  npm install stripe
 
+ npm i swiper
+ 
+ npm i vue-router@next
 
 ⭐ User Features
 
@@ -64,5 +83,7 @@
 - If you'd like to contribute, please fork the repository and make changes as you'd like.
 
 - Pull requests are warmly welcome. 
+-cyrine
 
 - Thanks a lot. 👨‍💻
+>>>>>>> cf3eebe7a9ea89d3931d6e89fe0166c70438943a

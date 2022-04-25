@@ -1,9 +1,9 @@
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 
-const testSchema = new mongoose.Schema({
-    test:String,
-  });
+// const testSchema = new mongoose.Schema({
+//     test:String,
+//   });
   
-const Test = mongoose.model("Test", testSchema);
+// const Test = mongoose.model("Test", testSchema);
   
-module.exports = Test;
+// module.exports = Test;
