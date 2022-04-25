@@ -38,10 +38,16 @@ export default{
   },
     name:"UnderNav", 
 
-    data(){
-      axios.get("",)
+    mounted(){
+    this.getPosts()
+  },
+  computed: {
+    filteredPosts() {
+      return this.posts.filter(post =>
+        post.title.toLowerCase().includes(this.search.toLowerCase())
+      );
     }
-
+  }
 }
 </script>
 
