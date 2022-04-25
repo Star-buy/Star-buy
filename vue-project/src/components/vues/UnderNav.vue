@@ -1,4 +1,6 @@
 <template>
+
+<div>
   <div>
     <nav class="tapnavv">
       <div class="tapi">
@@ -17,17 +19,20 @@
         </div>
       </div>
       <ul class="lin-container">
-        <li class="li-item"><a href="#" class="li">Men</a></li>
-        <li class="li-item"><a href="#" class="li">Women</a></li>
-        <li class="li-item"><a href="#" class="li">Kids</a></li>
+        <li class="li-item"><router-link class="li" href="#order" to="/Male" >man</router-link></li>
+        <li class="li-item"><router-link class="li" href="#order" to="/Female" >woman</router-link></li>
+        <li class="li-item"><router-link class="li" href="#order" to="/Kids" >Kids</router-link></li>
         <li class="li-item"><a href="#" class="li">Accessories</a></li>
       </ul>
     </nav>
   </div>
   <Card/>
   <Accessories/>
+  </div>
 </template>
+
 <script>
+
 import Card from "./Card.vue";
 import Accessories from "./Accessories.vue";
 import axios from "axios";
@@ -37,10 +42,7 @@ export default{
      Accessories
   },
     name:"UnderNav", 
-
-    mounted(){
-    this.getPosts()
-  },
+ 
   computed: {
     filteredPosts() {
       return this.posts.filter(post =>
@@ -50,7 +52,6 @@ export default{
   }
 }
 </script>
-
 <style>
 .tapnavv {
   margin-top: 84px;

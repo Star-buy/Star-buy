@@ -1,4 +1,6 @@
 <template>
+
+<div>
   <div class="rev-section">
     <h2 class="title">Our Custumers Love Us</h2>
     <p class="note">
@@ -40,8 +42,9 @@
     </div>
   </div>
   <ReviewList/>
-</template>
 
+</div>
+</template>
 <script>
 import ReviewList from "./ReviewList.vue"
 import axios from "axios";
@@ -52,12 +55,10 @@ export default {
   },
   data() {
     return {
-      
         name: "",
         image: "",
         location: "",
         description: "",
-      
     };
   },
   methods: {
@@ -79,7 +80,6 @@ export default {
     createImage(file) {
       var reader = new FileReader();
       var vm = this;
-
       reader.onload = (e) => {
         vm.image = e.target.result;
       };
@@ -88,7 +88,6 @@ export default {
   },
 };
 </script>
-
 <style>
  .con {
   position: relative;
@@ -98,8 +97,8 @@ export default {
   padding: 40px;
   margin: 44px auto;
   box-sizing: border-box;
-  background: #ecf0f3;
-  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+  background: #ECF0F3;
+  box-shadow: 14px 14px 20px #CBCED1, -14px -14px 20px white;
 }
 .brandi {
   height: 100px;
@@ -108,22 +107,19 @@ export default {
   margin: auto;
   border-radius: 50%;
   box-sizing: border-box;
-  box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
+  box-shadow: 7px 7px 10px #CBCED1, -7px -7px 10px white;
 }
-
 .brandtitle {
   margin-top: 10px;
   font-weight: 900;
   font-size: 1.8rem;
-  color: #1da1f2;
+  color: #1DA1F2;
   letter-spacing: 1px;
 }
-
 .inputsss {
   text-align: left;
   margin-top: 30px;
 }
-
 .pass,
 .inpat,
 .log {
@@ -135,38 +131,32 @@ export default {
   box-sizing: border-box;
   margin-top: 12px;
 }
-
 .pass {
   margin-bottom: 4px;
 }
-
 .pass:nth-of-type(2) {
   margin-top: 12px;
 }
-
 .pass::placeholder {
   color: gray;
 }
-
-
   .inpat {
-    background: #ecf0f3;
+    background: #ECF0F3;
     padding: 13px;
     padding-left: 24px;
     height: 62px;
     font-size: 18px;
     border-radius: 50px;
-    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+    box-shadow: inset 6px 6px 6px #CBCED1, inset -6px -6px 6px white;
 }
-
 .inpatt {
-  background: #ecf0f3;
+  background: #ECF0F3;
   padding: 10px;
   padding-left: 20px;
   height: 50px;
   font-size: 14px;
   border-radius: 50px;
-  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+  box-shadow: inset 6px 6px 6px #CBCED1, inset -6px -6px 6px white;
 }
 .pass,
 .inpatt,
@@ -178,23 +168,20 @@ export default {
   outline: none;
   box-sizing: border-box;
 }
-
 .log {
   color: rgb(255 255 255);
   margin-top: 23px;
-  background: #1da1f2;
+  background: #1DA1F2;
   height: 47px;
   border-radius: 11px;
   cursor: pointer;
   font-weight: 950;
-  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+  box-shadow: 6px 6px 6px #CBCED1, -6px -6px 6px white;
   transition: 0.5s;
 }
-
 .log:hover {
   box-shadow: none;
 }
-
 .tati {
   position: absolute;
   font-size: 8px;
@@ -215,13 +202,13 @@ textarea {
   border: none;
   outline: none;
   box-sizing: border-box;
-  background: #ecf0f3;
+  background: #ECF0F3;
   padding: 10px;
   padding-left: 20px;
   height: 50px;
   font-size: 22px;
   border-radius: 50px;
-  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+  box-shadow: inset 6px 6px 6px #CBCED1, inset -6px -6px 6px white;
 }
 .imaget {
   width: 30%;
@@ -234,8 +221,8 @@ textarea {
 }
 .texto {
   text-align: center;
-  color: #1da1f2;
-} 
+  color: #1DA1F2;
+}
 .title{
   color:#ff621e;
 }

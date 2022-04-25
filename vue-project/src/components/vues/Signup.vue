@@ -10,7 +10,7 @@
       <input type="email" placeholder="@gmail.com" class="nwme" name="email" v-model="email">
       <p>Password</p>
       <input type="password" placeholder="Your Password..." class="nwme" name="password" v-model="password">
-      <p>Confirm Password</p>
+      <p>Confirm Passwordd</p>
       <input type="password" placeholder="Your Password..." class="nwme"><br/>
           <div v-if="!image">
             <h2 class="textoo">Select your image</h2>
@@ -30,14 +30,14 @@
     </div>
   </div>
 </template>
-
 <script>
 import axios from "axios";
 export default {
-  name: "Signup",
+    name: "Signup",
+
   data() {
     return {
-      username: "",
+      name: "",
       email: "",
       password: "",
       image: "",
@@ -45,19 +45,41 @@ export default {
   },
   methods: {
     register() {
+              if(this.name && this.email && this.password ){
+
+      if(this.image){
       axios
-        .post("/signup", {
-          username: this.username,
+        .post("http://localhost:5000/signup", {
+          username: this.name,
           email: this.email,
           image: this.image,
           password: this.password,
         })
         .then((result) => {
           console.log(result.data);
+          alert(result.data)
         })
         .catch((err) => {
           console.log(err);
-        });
+          alert('registrer failed')
+        })}else{
+          axios
+        .post("http://localhost:5000/signup", {
+          username: this.name,
+          email: this.email,
+          password: this.password,
+        })
+        .then((result) => {
+          console.log(result.data);
+          alert(result.data)
+        })
+        .catch((err) => {
+          console.log(err);
+          alert('registrer failed')
+        })
+        }}else{
+          alert('fill all the fields')
+        }
     },
     onFileChange(e) {
       var files = e.target.files;
@@ -78,6 +100,7 @@ export default {
     },
   },
 };
+
 </script>
 <style>
 .conti {
