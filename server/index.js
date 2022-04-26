@@ -3,35 +3,38 @@ var express = require("express");
 const fileUpload = require("express-fileupload");
 const cors = require("cors");
 const app = express();
-<<<<<<< HEAD
-//DATA
-=======
-const dotenv =require("dotenv");
-dotenv.config()
->>>>>>> d22c6412939968309b8f5f6570c351830044bec8
+const dotenv = require("dotenv");
+const bodyParser = require("body-parser");
+
+dotenv.config();
 
 /***************** Including Routes *****************/
 //ToDo
 const reviewRoutes = require("./routes/review");
 const registrer = require("./routes/registrer");
 const admin = require("./routes/admin");
+const payment = require("./routes/stripe");
+const filter = require("./routes/filter");
 /********************* Database *********************/
 var test = require("./database-mongo");
 var test1 = require("./database-mysql");
 
 /******************** Middleware ********************/
+app.use(bodyParser.json({ limit: "50mb" }));
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/../vue-project/dist"));
 app.use(fileUpload());
-app.use(cors());
+app.use(cors({ origin: "*" }));
 /********************** Routes **********************/
 //ToDo
 app.use("/", reviewRoutes);
 app.use("/", registrer);
-app.use("/",admin)
+app.use("/", admin);
+app.use("/", payment);
+app.use("/", filter);
 
-const port = process.env.PORT || 5000;
+const port = 5000;
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });

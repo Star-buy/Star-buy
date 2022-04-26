@@ -46,7 +46,8 @@
  npm install stripe
 
  npm i swiper
-
+ 
+ npm i vue-router@next
 
 ⭐ User Features
 
