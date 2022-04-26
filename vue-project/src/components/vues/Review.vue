@@ -4,8 +4,7 @@
   <div class="rev-section">
     <h2 class="title">Our Custumers Love Us</h2>
     <p class="note">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil laboriosam
-      possimus perferendis non error neque.
+      Your Feedback helps us improve our service and support . Please take a minute to rate your exprecice with our representative today!
     </p>
     <div class="con">
       <div class="brandi"></div>

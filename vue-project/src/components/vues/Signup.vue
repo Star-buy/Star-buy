@@ -12,6 +12,12 @@
       <input type="password" placeholder="Your Password..." class="nwme" name="password" v-model="password">
       <p>Confirm Passwordd</p>
       <input type="password" placeholder="Your Password..." class="nwme"><br/>
+    <select class="nwme" @change="change($event)" name="gender" style="align-items: center">
+      <option value="none" selected>Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="kids">kids</option>
+    </select>
           <div v-if="!image">
             <h2 class="textoo">Select your image</h2>
             <input type="file" @change="onFileChange" class="files"/>
@@ -56,8 +62,10 @@ export default {
           password: this.password,
         })
         .then((result) => {
-          console.log(result.data);
           alert(result.data)
+          if(result.data === "signup successful"){
+          // window.location.href = 'http://localhost:5000/Signin'
+          }
         })
         .catch((err) => {
           console.log(err);
@@ -70,8 +78,10 @@ export default {
           password: this.password,
         })
         .then((result) => {
-          console.log(result.data);
-          alert(result.data)
+            alert(result.data)
+          if(result.data === "signup successful"){
+          // window.location.href = 'http://localhost:5000/Signin'
+          }
         })
         .catch((err) => {
           console.log(err);

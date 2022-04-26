@@ -27,7 +27,7 @@
         <div class="cards">
           <div class="card">
             <div class="box">
-              <h1>2194</h1>
+              <h1>150</h1>
               <h3>Customers</h3>
             </div>
             <div class="icon-case">
@@ -36,7 +36,7 @@
           </div>
           <div class="card">
             <div class="box">
-              <h1>53</h1>
+              <h1>15</h1>
               <h3>Investors</h3>
             </div>
             <div class="icon-case">
@@ -71,44 +71,44 @@
             <table>
               <tr>
                 <th>Name</th>
-                <th>School</th>
+                <th>Last Name</th>
                 <th>Amount</th>
                 <th>Option</th>
               </tr>
               <tr>
                 <td>John Doe</td>
-                <td>St. James College</td>
-                <td>$120</td>
+                <td>Massoudi</td>
+                <td>120 TND</td>
                 <td><a href="#" class="btn">View</a></td>
               </tr>
               <tr>
-                <td>John Doe</td>
-                <td>St. James College</td>
-                <td>$120</td>
+                <td>Omar</td>
+                <td>Massoudi</td>
+                <td>150 TND</td>
                 <td><a href="#" class="btn">View</a></td>
               </tr>
               <tr>
-                <td>John Doe</td>
-                <td>St. James College</td>
-                <td>$120</td>
+                <td>Amir</td>
+                <td>Abid</td>
+                <td>1200 TND</td>
                 <td><a href="#" class="btn">View</a></td>
               </tr>
               <tr>
-                <td>John Doe</td>
-                <td>St. James College</td>
-                <td>$120</td>
+                <td>Sami</td>
+                <td>Mansour</td>
+                <td>60 TND</td>
                 <td><a href="#" class="btn">View</a></td>
               </tr>
               <tr>
-                <td>John Doe</td>
-                <td>St. James College</td>
-                <td>$120</td>
+                <td>Ghassen</td>
+                <td>Rgig</td>
+                <td>120 TND</td>
                 <td><a href="#" class="btn">View</a></td>
               </tr>
               <tr>
-                <td>John Doe</td>
-                <td>St. James College</td>
-                <td>$120</td>
+                <td>Wassim</td>
+                <td>Falleh</td>
+                <td>70 TND</td>
                 <td><a href="#" class="btn">View</a></td>
               </tr>
             </table>
@@ -120,29 +120,24 @@
             </div>
             <table>
               <tr>
-                <th>Profile</th>
+                <th>Gender</th>
                 <th>Name</th>
-                <th>option</th>
+                <th>Photo</th>
               </tr>
               <tr>
-                <td><img src="" alt="" /></td>
-                <td>John Steve Doe</td>
-                <td><img src="" alt="" /></td>
+                <td>Man</td>
+                <td>Steve Joe</td>
+                <td><img src="https://toyfairny.com/App_Themes/toyfair/images/promo/jeremy-gutsche710x444.jpg" alt="" /></td>
               </tr>
               <tr>
-                <td><img src="" alt="" /></td>
-                <td>John Steve Doe</td>
-                <td><img src="" alt="" /></td>
+                <td>Man</td>
+                <td>Lotfi bouchnak</td>
+                <td><img src="https://besthqwallpapers.com/Uploads/29-7-2017/17291/thumb2-4k-martin-garrix-portrait-guys-dj.jpg" alt="" /></td>
               </tr>
               <tr>
-                <td><img src="" alt="" /></td>
-                <td>John Steve Doe</td>
-                <td><img src="" alt="" /></td>
-              </tr>
-              <tr>
-                <td><img src="" alt="" /></td>
-                <td>John Steve Doe</td>
-                <td><img src="" alt="" /></td>
+                <td>Female</td>
+                <td>Malek boughatas</td>
+                <td><img src="https://c4.wallpaperflare.com/wallpaper/833/263/589/emma-watson-444-hd-wallpaper-preview.jpg" alt="" /></td>
               </tr>
             </table>
           </div>

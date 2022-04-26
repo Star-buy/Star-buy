@@ -15,7 +15,6 @@ const registrer = require("./routes/registrer");
 const admin = require("./routes/admin");
 const payment = require("./routes/stripe");
 const filter = require("./routes/filter");
-/********************* Database *********************/
 var test = require("./database-mongo");
 var test1 = require("./database-mysql");
 

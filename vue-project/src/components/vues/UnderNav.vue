@@ -43,13 +43,6 @@ export default{
   },
     name:"UnderNav", 
  
-  computed: {
-    filteredPosts() {
-      return this.posts.filter(post =>
-        post.title.toLowerCase().includes(this.search.toLowerCase())
-      );
-    }
-  }
 }
 </script>
 <style>

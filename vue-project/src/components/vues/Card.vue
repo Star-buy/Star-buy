@@ -1,34 +1,27 @@
 <template>
-
   <section class="product">
-    <h2 class="product-category">fares</h2>
-    
-
-    <signin :mesage='hahahahah' />
+    <h2 class="product-category">Selling</h2>
     <div class="product-container">
      <div  v-for="(post) in posts" :key="post.id"  class="product-card">
         <div class="product-image">
             <span class="discount-tag" v-if='post.discount' > {{post.discount}}% off</span>
             <img :src="post.image" class="product-thumb">
             <button class="card-btn" @click="showdata(post)" >add to whislist</button><br/>
-            <!-- <button class="card-btn" @click="deleteitem(post.id)" >delete</button> -->
         </div>
         <div class="product-info">
             <h2  class="product-brand"> {{post.title}} </h2>
             <p class="product-short-des"> {{post.description}} </p>
-            <span  class="price">${{post.price}} TND </span><span class="actual-price" v-if='post.discount'  > {{ (post.price * post.discount / 100)}} TND</span>
-        </div> 
+            <span  class="price">{{post.price}} TND </span><span class="actual-price" v-if='post.discount'  > {{ (post.price * post.discount / 100)}} TND</span>
+        </div>
     </div>
-    <signin msg='lol' />
 </div>
-</section>
 <payment v-if="boolean" :msg=[index1,index2,price] />
+</section>
 </template>
 <script>
 import axios from "axios";
 import payment from "./payment.vue"
 export default {
-  
   components: {
     payment
   },
@@ -42,8 +35,8 @@ export default {
       data:null,
       imgsrc:null,
       boolean:false,
-posts:[], 
-   } 
+posts:[],
+   }
    },
    mounted(){
          axios.get('http://localhost:5000/admin')
@@ -59,14 +52,9 @@ posts:[],
           this.price= post.price-(post.price * post.discount / 100)
           this.boolean=true
       },
-     deleteitem(postId){
-    axios.delete('http://localhost:5000/'+`${postId}`).then(()=>{window.location.reload()}).catch((err)=>{console.log(err)})
-     },
-  }
 }
-
+}
 </script>
-
 <style>
  section{
     background-color:#e5e8f6;
@@ -89,7 +77,7 @@ posts:[],
     padding: 0 10vw;
     display: flex;
     overflow-x: auto;
-    scroll-behavior: smooth; 
+    scroll-behavior: smooth;
 }
 .product-container::-webkit-scrollbar{
     display: none;
@@ -117,7 +105,7 @@ posts:[],
     background: #fff;
     padding: 11px;
     border-radius: 6px;
-    color: #ff7d7d;
+    color: #FF7D7D;
     font-size: 16px;
     right: 10px;
     top: 10px;
@@ -143,7 +131,7 @@ posts:[],
     opacity: 1;
 }
 .card-btn:hover{
-    background: #efefef;
+    background: #EFEFEF;
 }
 .product-info{
     width: 100%;
@@ -175,5 +163,5 @@ posts:[],
         font-weight: 900;
     font-size: 20px;
     color :red;
-}  
+}
 </style>

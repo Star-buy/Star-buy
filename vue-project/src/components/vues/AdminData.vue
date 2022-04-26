@@ -1,7 +1,7 @@
 <template>
+<div>
   <section class="productt" >
     <h2 class="product-category">fares</h2>
-
     <input
       class="search"
       v-model="search"
@@ -9,13 +9,13 @@
       placeholder="Search Product..."
     />
     <div class="product-container">
-      <div v-for="post in posts" :key="post.id" class="product-card">
+      <div v-for="post in filteredPosts()" :key="post.id" class="product-card">
         <div class="product-image">
           <span class="discount-tag" v-if="post.discount">
             {{ post.discount }}% off</span
           >
           <img :src="post.image" class="product-thumb" />
-          <button class="card-btn1" @click="updateitem(post)">Update</button
+          <button class="card-btn1" @click="updateitem(post.id)">Update</button
           ><br />
           <button class="card-btn2" @click="deleteitem(post.id)">Delete</button>
         </div>
@@ -73,7 +73,6 @@
     >
     </textarea>
     <br />
-    
     <div v-if="!image">
       <h2 class="textoo-o">Select a product image</h2>
       <input type="file" @change="onFileChange" class="files" />
@@ -82,8 +81,8 @@
       <img :src="image" class="imaget-t" />
     </div>
     <br />
-    
   </div>
+</div>
 </template>
 <script>
 import axios from "axios";
@@ -91,75 +90,63 @@ export default {
   name: "AdminData",
   props: ["msg"],
   data() {
-    return {
-      data: null,
-      imgsrc: null,
-      boolean: false,
-      posts: [],
-      search: "",
-      title: "",
-      description: "",
-      image: "",
-      price: "",
-      discount: "",
-      gender: "",
-    };
-  },
-  mounted() {
-    axios
-      .get("http://localhost:5000/admin")
-      .then((result) => {
-        this.posts = result.data;
-        this.filteredPosts();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+   return{
+        data:null,
+      imgsrc:null,
+      boolean:false,
+      posts:[],
+       search: "",
+title:'',
+description:'',
+image:'',
+price:'',
+discount:'',
+gender:''
+   }
+   },
+ mounted(){
+         axios.get('http://localhost:5000/admin')
+         .then((result)=>{
+          this.posts= result.data
+          this.filteredPosts()
+             })
+             .catch((error)=>{console.log(error)})
   },
   methods: {
-    filteredPosts() {
-      console.log(this.posts, "filter");
-      return this.posts.filter((post) =>
-        post.title.toLowerCase().includes(this.search.toLowerCase())
-      );
-    },
-    deleteitem(postId) {
-      axios
-        .delete("http://localhost:5000/" + `${postId}`)
-        .then(() => {
-          window.location.reload();
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-    change(e) {
-      var g = e.target.value;
-      this.gender = g;
-    },
-    updateitem(postId) {
-      if (this.title && this.description && this.image && this.price) {
-        axios
-          .put("http://localhost:5000/" + `${postId}`, {
-            title: this.title,
-            description: this.description,
-            image: this.image,
-            price: this.price,
-            discount: this.discount,
-            gender: this.gender,
-          })
-          .then((result) => {
-            alert(result.data);
-            window.location.reload();
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      } else {
-        alert("please fill all the fields");
-      }
-    },
-    onFileChange(e) {
+          filteredPosts(){
+            console.log(this.posts,'filter')
+       return this.posts.filter(post =>
+         post.title.toLowerCase().includes(this.search.toLowerCase())
+       );
+     },
+     deleteitem(postId){
+    axios.delete('http://localhost:5000/'+`${postId}`).then(()=>{window.location.reload()}).catch((err)=>{console.log(err)})
+     },
+     change(e){
+    var g = e.target.value
+    this.gender = g
+  },
+   updateitem(postId){
+     if(this.title && this.description && this.image && this.price){
+   axios.put('http://localhost:5000/'+`${postId}`,{
+      title: this.title,
+      description: this.description,
+      image:this.image,
+      price:this.price,
+      discount:this.discount,
+      gender:this.gender
+   }).then((result) => {
+    alert(result.data)
+    window.location.reload()
+    })
+    .catch(err => {
+        console.log(err)
+    })
+    }else{
+      alert('please fill all the fields')
+    }
+     },
+  onFileChange(e) {
       var files = e.target.files;
       if (!files.length) return;
       this.createImage(files[0]);
@@ -180,7 +167,7 @@ export default {
 </script>
 <style>
 .productt {
-  background-color: #ffeee6;
+  background-color: #FFEEE6;
 }
 .productt {
   position: relative;
@@ -231,7 +218,7 @@ export default {
   background: #fff;
   padding: 11px;
   border-radius: 6px;
-  color: #ff7d7d;
+  color: #FF7D7D;
   font-size: 16px;
   right: 10px;
   top: 10px;
@@ -276,10 +263,10 @@ export default {
   opacity: 1;
 }
 .card-btn2:hover {
-  background: #efefef;
+  background: #EFEFEF;
 }
 .card-btn1:hover {
-  background: #efefef;
+  background: #EFEFEF;
 }
 .product-info {
   width: 100%;
@@ -343,13 +330,13 @@ export default {
   border: none;
   outline: none;
   box-sizing: border-box;
-  background: #ecf0f3;
+  background: #ECF0F3;
   padding: 10px;
   padding-left: 20px;
   height: 50px;
   font-size: 22px;
   border-radius: 50px;
-  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+  box-shadow: inset 6px 6px 6px #CBCED1, inset -6px -6px 6px white;
 }
 .files {
   margin-left: 10cm;
@@ -383,7 +370,7 @@ export default {
   outline: none;
 }
 .update-h1 {
-  color: #ff621e;
+  color: #FF621E;
   margin-bottom: 52px;
 }
 </style>
