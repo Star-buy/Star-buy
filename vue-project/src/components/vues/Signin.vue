@@ -212,7 +212,7 @@ methods: {
       password: this.password
    }).then((result) => {
       if(result.data === 'hi admin'){
-         alert(result.data)
+         console.log(result.data)
      axios.post('http://localhost:5000/getUserinfo',{
         email: this.email,
      }).then(result => {
@@ -244,7 +244,7 @@ methods: {
      })  
         }
         else{
-           alert(result.data)
+           console.log(result.data)
         }
     })
     .catch(err => {

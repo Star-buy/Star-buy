@@ -1,7 +1,7 @@
 <template>
 
 <div>
-  <div>
+  <div >
     <nav class="tapnavv">
       <div class="tapi">
         <img src="/images/sale.png" class="brandis" alt="" />
