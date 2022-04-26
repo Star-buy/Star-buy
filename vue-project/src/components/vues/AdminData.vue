@@ -1,13 +1,16 @@
 <template>
 
   <section class="product">
- 
+
+
 
     <h2 class="product-category">fares</h2>
+     <input class="search" v-model="search" type="text" placeholder="search Product"/>
+
     <div>
     <div class="product-container">
 
-            <div v-for="post in filteredPosts" :key="post.id">
+            <div v-for="post in filteredPosts()" :key="post.id">
         <div class="product-image">
             <span class="discount-tag" v-if='post.discount' > {{post.discount}}% off</span>
             <img :src="post.image" class="product-thumb">
@@ -21,11 +24,6 @@
         </div> 
     </div>
   
-<input
-          v-model="search"
-            type="text"
-            placeholder="search brand/Product"
-          />
     
     </div>
     </div><br/><br/>
@@ -56,7 +54,8 @@
         
         <div v-else>
           <img :src="image" class="imaget-t" />
-        </div><br/>
+        </div>
+        <br/>
           <select class="seletc"  @change="change($event)"  name="gender">
 	<option value="none" selected>Gender</option>
 	<option  value="male">Male</option>
@@ -96,20 +95,20 @@ gender:''
          axios.get('http://localhost:5000/admin')
          .then((result)=>{
           this.posts= result.data
-          console.log(this.posts,"get")
+          this.filteredPosts()
              })
              .catch((error)=>{console.log(error)})
   },
-     computed(){
-  this.filteredPosts()
-  },
+ 
 
   methods: {
-         filteredPosts(){
-      return this.posts.filter(post =>
-        post.title.toLowerCase().includes(this.search.toLowerCase())
-      );
-    },
+          filteredPosts(){
+            console.log(this.posts,'filter')
+       return this.posts.filter(post =>
+         post.title.toLowerCase().includes(this.search.toLowerCase())
+       );
+      
+     },
      deleteitem(postId){
     axios.delete('http://localhost:5000/'+`${postId}`).then(()=>{window.location.reload()}).catch((err)=>{console.log(err)})
      },
@@ -323,7 +322,7 @@ gender:''
 
 }
 .files{
-  margin-left: 26cm;
+  margin-left: 10cm;
 }
 .select{
   margin-left: 26cm;
@@ -331,4 +330,25 @@ gender:''
 .string{
   margin-left: 17cm;
 }
+
+.search{
+  margin-left: 39cm;
+    width: 500px;
+    border-radius: 10px;
+    display: flex;
+    height: 62px;
+}
+.search-box{
+    width:80%;
+    height:50px;
+    padding:20px;
+    border-top-left-radius: 17px;
+    border: 1px solid #000000;
+    
+    font-size: medium;
+    background:none;
+    color:#000000;
+    outline:none;
+}
+
 </style>

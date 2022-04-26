@@ -56,8 +56,10 @@ export default {
           password: this.password,
         })
         .then((result) => {
-          console.log(result.data);
           alert(result.data)
+          if(result.data === "signup successful"){
+          window.location.href = 'http://localhost:3000/Signin'
+          }
         })
         .catch((err) => {
           console.log(err);
@@ -70,8 +72,10 @@ export default {
           password: this.password,
         })
         .then((result) => {
-          console.log(result.data);
-          alert(result.data)
+            alert(result.data)
+          if(result.data === "signup successful"){
+          window.location.href = 'http://localhost:3000/Signin'
+          }
         })
         .catch((err) => {
           console.log(err);
