@@ -13,8 +13,8 @@ dotenv.config();
 const reviewRoutes = require("./routes/review");
 const registrer = require("./routes/registrer");
 const admin = require("./routes/admin");
-
-/********************* Database *********************/
+const payment = require("./routes/stripe");
+const filter = require("./routes/filter");
 var test = require("./database-mongo");
 var test1 = require("./database-mysql");
 
@@ -30,7 +30,8 @@ app.use(cors({ origin: "*" }));
 app.use("/", reviewRoutes);
 app.use("/", registrer);
 app.use("/", admin);
-
+app.use("/", payment);
+app.use("/", filter);
 
 const port = 5000;
 app.listen(port, () => {

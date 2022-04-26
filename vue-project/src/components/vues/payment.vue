@@ -1,70 +1,59 @@
 <template>
+<div> 
 
-  <section class="product">
-    <h2 class="product-category">Selling</h2>
-    
-
-    <signin :mesage='hahahahah' />
-    <div class="product-container">
-     <div  v-for="(post) in posts" :key="post.id"  class="product-card">
-        <div class="product-image">
-            <span class="discount-tag" v-if='post.discount' > {{post.discount}}% off</span>
-            <img :src="post.image" class="product-thumb">
-            <button class="card-btn" @click="showdata(post)" >add to whislist</button><br/>
-            
-        </div>
-        <div class="product-info">
-            <h2  class="product-brand"> {{post.title}} </h2>
-            <p class="product-short-des"> {{post.description}} </p>
-            <span  class="price">{{post.price}} TND </span><span class="actual-price" v-if='post.discount'  > {{ (post.price * post.discount / 100)}} TND</span>
-        </div> 
-    </div>
-    <signin msg='lol' />
-</div>
-    <payment v-if="boolean" :msg=[index1,index2,price] />
-</section>
-
+    <h1>Payment </h1>
+    <img :src="image" class="product-image"/>
+     <input v-model="title" readonly="readonly"  placeholder='title' /><br/>
+    <input v-model="price"  readonly="readonly" placeholder='price' /><br/>
+    <input v-model="quantity" type="number" placeholder="quantity" /><br/>
+    <input @click='post' :name="btnName" type="submit" /> 
+    {{index}}
+</div>    
 </template>
+
 <script>
-import axios from "axios";
-import payment from "./payment.vue"
+import axios from "axios"
+
+
 export default {
-  
-  components: {
-    payment
-  },
-  name: "Card",
-    props:['msg'],
-  data() {
+    name : 'payment',
+    props:{msg:Object},
+
+data() {
    return{
-       index1:'',
-       index2:'',
-       price:'',
-      data:null,
-      imgsrc:null,
-      boolean:false,
-posts:[], 
-   } 
-   },
-   mounted(){
-         axios.get('http://localhost:5000/admin')
-         .then((result)=>{
-          this.posts= result.data
-             } )
-             .catch((error)=>{console.log(error)})
-  },
-  methods: {
-      showdata(post) {
-          this.index1= post.title
-          this.index2= post.image
-          this.price= post.price-(post.price * post.discount / 100)
-          this.boolean=true
-      },
-}
+title:this.msg[0],
+image:this.msg[1],
+price:this.msg[2],
+quantity:'',
+
+   }
+},
+
+methods: {
+    
+   post(){
+       if(this.title && this.price && this.quantity && this.image){
+ axios.post('http://localhost:5000/pay',{
+     title: this.title,
+     price: this.price,
+     image: this.image,
+      quantity: this.quantity
+ }).then((response)=>{
+    window.location.href = response.data
+     }).catch((err)=>{
+         console.log(err)})}
+else{
+    alert('fill all the fields')
 }
 
+     },
+      clg(){
+     console.log(this.props)
+ }
+
+}
+}
 </script>
-
 <style>
  section{
     background-color:#e5e8f6;
@@ -104,17 +93,6 @@ posts:[],
     height: 350px;
     overflow: hidden;
 }
-<<<<<<< HEAD
-.product-image:hover{
-    width: 120%;
-    height: 370px;
-    border-radius: 15px;
-    cursor: pointer;
-  
-  }
-
-=======
->>>>>>> 5a5d1675d9cc1d40ac41e990daeffb1d91873997
 .product-thumb{
     width: 100%;
     height: 350px;

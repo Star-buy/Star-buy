@@ -24,10 +24,29 @@ const getAllEmails = (email, callback) => {
   });
 };
 
+const signupAdmin = (username, email, image, password, role, callback) => {
+  const sql =
+    "INSERT INTO accounts (username,email,image,password,role) VALUES (?,?,?,?,?)";
+  connection.query(
+    sql,
+    [username, email, image, password, role],
+    (err, result) => {
+      callback(err, result);
+    }
+  );
+};
+
 const signup = (username, email, image, password, callback) => {
   const sql =
     "INSERT INTO accounts (username,email,image,password) VALUES (?,?,?,?)";
   connection.query(sql, [username, email, image, password], (err, result) => {
+    callback(err, result);
+  });
+};
+
+const signupWithoutimg = (username, email, password, callback) => {
+  const sql = "INSERT INTO accounts (username,email,password) VALUES (?,?,?)";
+  connection.query(sql, [username, email, password], (err, result) => {
     callback(err, result);
   });
 };
@@ -39,27 +58,104 @@ const getPasswordByEmail = (email, callback) => {
   });
 };
 
+const getUserNameandImage = (email, callback) => {
+  const sql = "SELECT username, image FROM accounts WHERE email = ?;";
+  connection.query(sql, [email], (err, result) => {
+    callback(err, result);
+  });
+};
+const getusername = (email, callback) => {
+  const sql = "SELECT username FROM accounts WHERE email =?";
+  connection.query(sql, [email], (err, result) => {
+    callback(err, result);
+  });
+};
 
-const getUserName=(email ,callback) =>{
-const sql = "SELECT username, image FROM accounts WHERE email = ?;"
-connection.query(sql,[email], (err, result) =>{
-    callback(err,result)
-})
-}
+const postItemwithdisc = (
+  title,
+  description,
+  image,
+  price,
+  discount,
+  gender,
+  callback
+) => {
+  const sql =
+    "INSERT INTO items (title,description,image,price,discount,gender) VALUES (?,?,?,?,?,?)";
+  connection.query(
+    sql,
+    [title, description, image, price, discount, gender],
+    (err, result) => {
+      callback(err, result);
+    }
+  );
+};
+const postItemwithoutdisc = (
+  title,
+  description,
+  image,
+  price,
+  gender,
+  callback
+) => {
+  const sql =
+    "INSERT INTO items (title,description,image,price,gender) VALUES (?,?,?,?,?)";
+  connection.query(
+    sql,
+    [title, description, image, price, gender],
+    (err, result) => {
+      callback(err, result);
+    }
+  );
+};
 
-const postItem =(title,description,image,price,callback)=>{
-const sql = "INSERT INTO items (title,description,image,price) VALUES (?,?,?,?)"
-connection.query(sql, [title, description,image, price],(err,result)=>{
-  callback(err, result)
-})
-}
+const getItem = (callback) => {
+  const sql = " SELECT * FROM items; ";
+  connection.query(sql, (err, result) => {
+    callback(err, result);
+  });
+};
 
-const getItem =(callback)=>{
-  const sql = "SELECT * FROM items;"
-  connection.query(sql,(err, result)=>{
-    callback(err, result)
+const getRole = (email, callback) => {
+  const sql = "SELECT role FROM accounts WHERE email =?";
+  connection.query(sql, [email], (err, result) => {
+    callback(err, result);
+  });
+};
+
+const deleteitem = (id, callback) => {
+  const sql = "DELETE FROM items WHERE id = ?;";
+  connection.query(sql, id, (err, result) => {
+    callback(err, result);
+  });
+};
+
+const updateitem = (  id ,title, description, image, price,discount, gender, callback) => {
+  const sql = "UPDATE items SET title = ? , description = ?, image = ?, price = ?,discount=?, gender = ? WHERE id = ?;"
+  connection.query(sql, [title, description, image, price,discount, gender,id],(err, result)=>{
+    callback(err, result);
   })
 }
+
+const getman = (callback)=>{
+const sql = "SELECT * FROM items WHERE gender = 'male' " 
+connection.query(sql,(err, result)=>{
+  callback(err, result);
+})
+}
+const getfemale = (callback)=>{
+  const sql = "SELECT * FROM items WHERE gender = 'female' " 
+  connection.query(sql,(err, result)=>{
+    callback(err, result);
+  })
+  }
+
+  const getkids = (callback)=>{
+    const sql = "SELECT * FROM items WHERE gender = 'kids' " 
+    connection.query(sql,(err, result)=>{
+      callback(err, result);
+    })
+    }
 
 
 db.connectAsync()
@@ -70,4 +166,22 @@ db.connectAsync()
   .then(() => db.queryAsync(`USE ${database}`))
   .then(() => createTables(db));
 
-module.exports = { getAllNames, getAllEmails, signup, getPasswordByEmail,getUserName ,postItem,getItem};
+module.exports = {
+  getman,
+  getfemale,
+  getkids,
+  deleteitem,
+  getRole,
+  signupAdmin,
+  signupWithoutimg,
+  postItemwithoutdisc,
+  getusername,
+  getAllNames,
+  getAllEmails,
+  signup,
+  getPasswordByEmail,
+  getUserNameandImage,
+  postItemwithdisc,
+  getItem,
+  updateitem
+};
