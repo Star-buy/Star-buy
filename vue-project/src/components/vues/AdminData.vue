@@ -69,7 +69,7 @@
       name="desc"
       v-model="description"
       class="nwme-me"
-      placeholder="Product description..."
+      placeholder="Product description...."
     >
     </textarea>
     <br />
