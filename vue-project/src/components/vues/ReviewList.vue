@@ -2,7 +2,7 @@
 <div>
   <div class="lll">
     <h1 v-if="Boolean" style="color:#ff621e">
-      You can check the by clicking in this button below
+      You can check the reviews by clicking in this button below
     </h1>
     <button  @click="getReviews" class="buttom" style="vertical-align:middle"><span>See the reviews </span></button>
   </div>

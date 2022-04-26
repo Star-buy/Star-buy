@@ -32,9 +32,14 @@
         </div>
     </div>
     <p class="footer-title">about company</p>
-    <p class="info">Description</p>
-    <p class="info">support emails - Wakanda.com, customersupport@star-buy.com</p>
-    <p class="info">Phone -+216 26351262 </p>
+    <p class="info">Online shopping, clothes at low prices, discounts of up to 50%. That's all Star-Buy.com!
+                    We take care to always offer you varied and trendy offers.
+                    1040 E. Indian School Rd. Phoenix, AZ 85014
+                    602.931.0090 / 602.430.2032
+                    Mon - Sat, 10am - 5pm
+                    Sun CLOSED</p>
+    <p class="info">support emails - starbuybuisness@gmail.com</p>
+    <p class="info">Phone -+216 27758151 </p>
     <div class="footer-social-container">
         <div>
             <a href="#" class="social-link">terms & services</a>

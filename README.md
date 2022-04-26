@@ -1,19 +1,11 @@
-<<<<<<< HEAD
-# Star-buy
- -hello 
+
+# Star-Buy
+
+ -hello
+
  -this is an E-commerce Application allowing users to buy different products online.
 
-<<<<<<< HEAD
- - hello from alaa
- kd2olnfouln32fm
-- sirrrrrrrrrine
-=======
--omar was here
--cyrine was here
-- next
-- siriine
->>>>>>> d89fe6c62cb470b80d2197aeae946a0defa5852c
-=======
+ 
 # Welcome to Star-Buy! ✨
 
 - E-commerce App 👨‍💻
@@ -51,16 +43,15 @@
 
 ⭐ User Features
 
-- Authentication (Signup, Login, Reset Password).
+- Authentication (Signup, Login).
 - Real time update.
-- User Profile (Upload, Edit Profile Picture, Address).
+- User Profile (Upload, Edit Profile Picture, Address). 
 - Add Items to Cart, to wishlist.
 - Place an Order.
 - Payment Methods: cash, cashapp, credit card.
 - Push notification to user whenever order status, user information change.
 - Send email for reseting password as well as update order information.
-- Share Products to Social Media.
-- Review, Comment, Rating Product (In Processing).
+- Review, Comment, Rating Product .
 
 
 ⭐ Admin Features
@@ -83,7 +74,6 @@
 - If you'd like to contribute, please fork the repository and make changes as you'd like.
 
 - Pull requests are warmly welcome. 
--cyrine
 
 - Thanks a lot. 👨‍💻
->>>>>>> cf3eebe7a9ea89d3931d6e89fe0166c70438943a
+

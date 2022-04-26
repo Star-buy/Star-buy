@@ -1,19 +1,27 @@
 <template>
 
   <section class="product">
+<<<<<<< HEAD
+    <h2 class="product-category">Selling</h2>
+    
+
+    <signin :mesage='hahahahah' />
+    <div class="product-container">
+=======
     <h2 class="product-category">fares</h2>
         <div class="product-container">
+>>>>>>> 26d068c259e1336687d54c47b56962c94b8b439b
      <div  v-for="(post) in posts" :key="post.id"  class="product-card">
         <div class="product-image">
             <span class="discount-tag" v-if='post.discount' > {{post.discount}}% off</span>
             <img :src="post.image" class="product-thumb">
             <button class="card-btn" @click="showdata(post)" >add to whislist</button><br/>
-            <!-- <button class="card-btn" @click="deleteitem(post.id)" >delete</button> -->
+            
         </div>
         <div class="product-info">
             <h2  class="product-brand"> {{post.title}} </h2>
             <p class="product-short-des"> {{post.description}} </p>
-            <span  class="price">${{post.price}} TND </span><span class="actual-price" v-if='post.discount'  > {{ (post.price * post.discount / 100)}} TND</span>
+            <span  class="price">{{post.price}} TND </span><span class="actual-price" v-if='post.discount'  > {{ (post.price * post.discount / 100)}} TND</span>
         </div> 
     </div>
 </div>
@@ -56,10 +64,7 @@ posts:[],
           this.price= post.price-(post.price * post.discount / 100)
           this.boolean=true
       },
-     deleteitem(postId){
-    axios.delete('http://localhost:5000/'+`${postId}`).then(()=>{window.location.reload()}).catch((err)=>{console.log(err)})
-     },
-  }
+}
 }
 
 </script>
@@ -103,6 +108,17 @@ posts:[],
     height: 350px;
     overflow: hidden;
 }
+<<<<<<< HEAD
+.product-image:hover{
+    width: 120%;
+    height: 370px;
+    border-radius: 15px;
+    cursor: pointer;
+  
+  }
+
+=======
+>>>>>>> 5a5d1675d9cc1d40ac41e990daeffb1d91873997
 .product-thumb{
     width: 100%;
     height: 350px;
