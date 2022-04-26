@@ -6,17 +6,20 @@
       <div id="menu-bar" class="fas fa-bars"></div>
 
       <nav class="navbar">
-        <a href="#home">Home</a>
-        <a href="#gallery">gallery</a>
-        <a href="#review">review</a>
-        <a href="#order">order</a>
-      </nav>      
+        <router-link class="nav-link" to="/Home">Home</router-link>
+        <router-link class="nav-link" to="/UnderNav">Products</router-link>
+        <router-link class="nav-link" to="/Review">Review</router-link>
+        <router-link href="#order" to="/Signin">Login</router-link>
+        <router-link href="#order" to="/AdminPart">Admin</router-link>
+      </nav>
     </header>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Navbar",
+};
 </script>
 
 <style>
@@ -28,14 +31,14 @@ export default {};
 
 * {
   font-family: "Nunito", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  /* margin: 0;
+  padding: 0; */
+  /* box-sizing: border-box; */
   outline: none;
   border: none;
   text-decoration: none;
-  text-transform: capitalize;
-  transition: all 0.2s linear;
+  /* text-transform: capitalize; */
+  /* transition: all 0.2s linear; */
 }
 
 *::selection {
@@ -43,19 +46,8 @@ export default {};
   color: #fff;
 }
 
-html {
-  font-size: 62.5%;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  scroll-padding-top: 6rem;
-}
-
 body {
   background: #f7f7f7;
-}
-
-section {
-  padding: 2rem 9%;
 }
 
 .heading {
@@ -114,14 +106,14 @@ header {
   align-items: center;
   justify-content: space-between;
   background: #181925;
-  padding: 2.5rem 9%;
+  padding: 1.5rem 9%;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
 header .logo {
   font-size: 2.5rem;
   font-weight: bolder;
-  color: #fffbfb;
+  color:#ff621e
 }
 
 header .logo i {
@@ -130,7 +122,7 @@ header .logo i {
 }
 
 header .navbar a {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-left: 2rem;
   color: #fefefe;
 }

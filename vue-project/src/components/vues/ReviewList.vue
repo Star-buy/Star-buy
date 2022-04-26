@@ -1,22 +1,22 @@
 <template>
+  <div class="lll">
+    <h1 v-if="Boolean" style="color:#ff621e">
+      You can check the by clicking in this button below
+    </h1>
+    <button  @click="getReviews" class="buttom" style="vertical-align:middle"><span>See the reviews </span></button>
+  </div>
   <div class="reviews">
-    <div class="review" v-for="review in reviews" :key="review.id"> 
+    <div class="review" v-for="review in reviews" :key="review.id">
       <div class="head-review">
-        <img
-          v-bind:src="`${review.image}`"
-          width="250px"
-          class="image-rev"
-        />
+        <img v-bind:src="`${review.image}`" width="250px" class="image-rev" />
       </div>
       <div class="body-review">
-        <div class="name-review">{{review.name}}</div>
-        <div class="place-review">{{review.location}}</div>
-        <div class="desc-review">{{review.description}}</div>
-        </div>
+        <div class="name-review">{{ review.name }}</div>
+        <div class="place-review">{{ review.location }}</div>
+        <div class="desc-review">{{ review.description }}</div>
       </div>
     </div>
-    <h1 v-if="Boolean" style="color:red" > You can check the by clicking in this button below</h1>
-  <button @click="getReviews">Vue All Feedbacks</button>
+  </div>
 </template>
 
 <script>
@@ -26,22 +26,22 @@ export default {
   data() {
     return {
       reviews: [],
-      Boolean:true,
+      Boolean: true,
     };
   },
   methods: {
     getReviews() {
       axios
         .get("/test")
-        .then((response)=>{
-            console.log(response); 
-            this.reviews = response.data;
-            this.Boolean=false;
-             console.log(response.data,"wehifbkj");
+        .then((response) => {
+          console.log(response);
+          this.reviews = response.data;
+          this.Boolean = false;
+          console.log(response.data, "wehifbkj");
         })
         .catch((error) => {
           console.log(error);
-          this.Boolean=false;
+          this.Boolean = false;
         });
     },
   },
@@ -49,8 +49,13 @@ export default {
 </script>
 
 <style>
+.lll{
+     text-align: center;
+     font-size:40px;
+     font-style: italic;
+}
 .rev-section {
-  margin: auto;
+  margin: 145px;
   padding: 0 1rem;
   max-width: 1100px;
   text-align: center;
@@ -65,6 +70,7 @@ export default {
   font-size: 2.1rem;
   color: rgb(150, 150, 150);
   font-style: italic;
+  margin: 44px auto;
 }
 .reviews {
   margin: 2rem auto;
@@ -119,5 +125,44 @@ export default {
   .review {
     margin-top: 1.5rem;
   }
+}
+.buttom {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.buttom span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttom span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttom:hover span {
+  padding-right: 25px;
+}
+
+.buttom:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 </style>

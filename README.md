@@ -38,13 +38,14 @@
  npm install stripe
 
  npm i swiper
-
+ 
+ npm i vue-router@next
 
 ⭐ User Features
 
 - Authentication (Signup, Login, Reset Password).
 - Real time update.
-- User Profile (Upload, Edit Profile Picture, Address). /update not yet
+- User Profile (Upload, Edit Profile Picture, Address). 
 - Add Items to Cart, to wishlist./ almost.
 - Place an Order./
 - Payment Methods: cash, cashapp, credit card.

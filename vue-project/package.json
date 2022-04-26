@@ -18,7 +18,8 @@
     "mongodb": "^4.5.0",
     "mongoose": "^6.3.0",
     "swiper": "^6.8.4",
-    "vue": "^3.2.31"
+    "vue": "^3.2.31",
+    "vue-router": "^4.0.13"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.1",

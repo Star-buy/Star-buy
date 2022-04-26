@@ -39,12 +39,17 @@
       </form>
     </div>
   </div>
+  <ReviewList/>
 </template>
 
 <script>
+import ReviewList from "./ReviewList.vue"
 import axios from "axios";
 export default {
   name: "Review",
+  components: {
+    ReviewList,
+  },
   data() {
     return {
       
@@ -85,12 +90,13 @@ export default {
 </script>
 
 <style>
-.con {
+ .con {
   position: relative;
   width: 456px;
   height: 527px px;
   border-radius: 23px;
   padding: 40px;
+  margin: 44px auto;
   box-sizing: border-box;
   background: #ecf0f3;
   box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
@@ -127,6 +133,7 @@ export default {
   border: none;
   outline: none;
   box-sizing: border-box;
+  margin-top: 12px;
 }
 
 .pass {
@@ -141,15 +148,17 @@ export default {
   color: gray;
 }
 
-.inpat {
-  background: #ecf0f3;
-  padding: 10px;
-  padding-left: 20px;
-  height: 50px;
-  font-size: 14px;
-  border-radius: 50px;
-  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+
+  .inpat {
+    background: #ecf0f3;
+    padding: 13px;
+    padding-left: 24px;
+    height: 62px;
+    font-size: 18px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
 }
+
 .inpatt {
   background: #ecf0f3;
   padding: 10px;
@@ -210,7 +219,7 @@ textarea {
   padding: 10px;
   padding-left: 20px;
   height: 50px;
-  font-size: 14px;
+  font-size: 22px;
   border-radius: 50px;
   box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
 }
@@ -226,5 +235,8 @@ textarea {
 .texto {
   text-align: center;
   color: #1da1f2;
+} 
+.title{
+  color:#ff621e;
 }
 </style>
