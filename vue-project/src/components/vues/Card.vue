@@ -2,10 +2,7 @@
 
   <section class="product">
     <h2 class="product-category">fares</h2>
-    
-
-    <signin :mesage='hahahahah' />
-    <div class="product-container">
+        <div class="product-container">
      <div  v-for="(post) in posts" :key="post.id"  class="product-card">
         <div class="product-image">
             <span class="discount-tag" v-if='post.discount' > {{post.discount}}% off</span>
@@ -19,9 +16,8 @@
             <span  class="price">${{post.price}} TND </span><span class="actual-price" v-if='post.discount'  > {{ (post.price * post.discount / 100)}} TND</span>
         </div> 
     </div>
-    <signin msg='lol' />
 </div>
-    <payment v-if="boolean" :msg=[index1,index2,price] />
+<payment v-if="boolean" :msg=[index1,index2,price] />
 </section>
 
 </template>

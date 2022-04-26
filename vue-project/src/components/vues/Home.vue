@@ -1,4 +1,6 @@
 <template>
+
+<div>
   <div class="hero">
     <div class="co">
         <img src="/images/light.png" class="logoo" alt="">
@@ -6,6 +8,8 @@
     </div>
 </div>
 <Footer/>
+</div>
+
 </template>
 
 <script>
@@ -22,6 +26,7 @@ export default {
 
 .hero{
     width: 100%;
+        margin-top: 94px;
     height: calc(100vh - 120px);
     background-image: url('/images/header.png');
     background-size: cover;
