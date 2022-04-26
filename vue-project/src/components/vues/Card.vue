@@ -21,9 +21,8 @@
     </div>
     <signin msg='lol' />
 </div>
-    <payment v-if="boolean" :msg=[index1,index2,price] />
 </section>
-
+<payment v-if="boolean" :msg=[index1,index2,price] />
 </template>
 <script>
 import axios from "axios";
