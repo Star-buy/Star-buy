@@ -160,7 +160,7 @@
                 </div>
               </div>
             </div>
-            div{{ data }}
+          <div class="namedata" > {{ data }}</div> 
             <img v-if="boolean" v-bind:src="`${imgsrc}`" />
             <div class="footer-link padding-top--24">
               <span class="span-span"
@@ -197,7 +197,6 @@ export default {
 
 data() {
    return{
-      func:this.mesage,
       data:null,
       imgsrc:null,
 email:'',
@@ -210,16 +209,18 @@ methods: {
    axios.post('http://localhost:5000/login',{
       email: this.email,
       password: this.password
-   }).then((result) => {
-      if(result.data === 'hi admin'){
-         alert(result.data)
-     axios.post('http://localhost:5000/getUserinfo',{
+   }).then( async(result) => {
+      if(result.data == 'hi admin'){
+      // window.location.href ="http://localhost:3000/AdminPart"
+     alert(result.data)
+   await  axios.post('http://localhost:5000/getUserinfo',{
         email: this.email,
      }).then(result => {
         if(result){
         this.data=result.data[0]
         this.imgsrc = result.data[1]
         this.confirm=true
+
         }else{
            alert('Something went wrong when getting userinfo')
            return;
@@ -229,6 +230,7 @@ methods: {
      })}
        else if(result.data === 'login successful' ){
     alert(result.data)
+    window.location.href= "http://localhost:3000/UnderNav"
      axios.post('http://localhost:5000/getUserinfo',{
         email: this.email,
      }).then(result => {
@@ -244,7 +246,7 @@ methods: {
      })  
         }
         else{
-           alert(result.data)
+           console.log(result.data)
         }
     })
     .catch(err => {
@@ -300,7 +302,7 @@ methods: {
   -ms-flex-direction: column;
   flex-direction: column;
 }
-.loginbackground-gridContainer {
+/* .loginbackground-gridContainer {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: [start] 1fr [left-gutter] (86.6px) [16] [left-gutter] 1fr
@@ -311,7 +313,7 @@ methods: {
   justify-content: center;
   margin: 0 -2%;
   transform: rotate(-12deg) skew(-12deg);
-}
+} */
 .box-divider--light-all-2 {
   box-shadow: inset 0 0 0 2px #e3e8ee;
 }
@@ -477,5 +479,8 @@ methods: {
   100% {
     transform: translateX(0px);
   }
+}
+.namedata{
+text-align:center
 }
 </style>

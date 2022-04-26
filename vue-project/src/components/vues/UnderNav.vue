@@ -1,7 +1,7 @@
 <template>
 
 <div>
-  <div>
+  <div >
     <nav class="tapnavv">
       <div class="tapi">
         <img src="/images/sale.png" class="brandis" alt="" />
@@ -43,13 +43,6 @@ export default{
   },
     name:"UnderNav", 
  
-  computed: {
-    filteredPosts() {
-      return this.posts.filter(post =>
-        post.title.toLowerCase().includes(this.search.toLowerCase())
-      );
-    }
-  }
 }
 </script>
 <style>

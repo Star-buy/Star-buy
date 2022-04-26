@@ -10,7 +10,7 @@
       <input type="email" placeholder="@gmail.com" class="nwme" name="email" v-model="email">
       <p>Password</p>
       <input type="password" placeholder="Your Password..." class="nwme" name="password" v-model="password">
-      <p>Confirm Password</p>
+      <p>Confirm Passwordd</p>
       <input type="password" placeholder="Your Password..." class="nwme"><br/>
           <div v-if="!image">
             <h2 class="textoo">Select your image</h2>
@@ -56,8 +56,10 @@ export default {
           password: this.password,
         })
         .then((result) => {
-          console.log(result.data);
           alert(result.data)
+          if(result.data === "signup successful"){
+          window.location.href = 'http://localhost:3000/Signin'
+          }
         })
         .catch((err) => {
           console.log(err);
@@ -70,8 +72,10 @@ export default {
           password: this.password,
         })
         .then((result) => {
-          console.log(result.data);
-          alert(result.data)
+            alert(result.data)
+          if(result.data === "signup successful"){
+          window.location.href = 'http://localhost:3000/Signin'
+          }
         })
         .catch((err) => {
           console.log(err);
