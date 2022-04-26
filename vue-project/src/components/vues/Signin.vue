@@ -246,7 +246,7 @@ methods: {
      })  
         }
         else{
-           alert(result.data)
+           console.log(result.data)
         }
     })
     .catch(err => {

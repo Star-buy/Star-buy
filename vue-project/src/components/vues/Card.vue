@@ -17,7 +17,7 @@
         </div> 
     </div>
 </div>
-    <payment v-if="boolean" :msg=[index1,index2,price] />
+<payment v-if="boolean" :msg=[index1,index2,price] />
 </section>
 
 </template>
