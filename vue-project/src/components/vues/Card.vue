@@ -1,39 +1,27 @@
 <template>
-
   <section class="product">
-<<<<<<< HEAD
     <h2 class="product-category">Selling</h2>
-    
-
-    <signin :mesage='hahahahah' />
     <div class="product-container">
-=======
-    <h2 class="product-category">fares</h2>
-        <div class="product-container">
->>>>>>> 26d068c259e1336687d54c47b56962c94b8b439b
      <div  v-for="(post) in posts" :key="post.id"  class="product-card">
         <div class="product-image">
             <span class="discount-tag" v-if='post.discount' > {{post.discount}}% off</span>
             <img :src="post.image" class="product-thumb">
             <button class="card-btn" @click="showdata(post)" >add to whislist</button><br/>
-            
         </div>
         <div class="product-info">
             <h2  class="product-brand"> {{post.title}} </h2>
             <p class="product-short-des"> {{post.description}} </p>
             <span  class="price">{{post.price}} TND </span><span class="actual-price" v-if='post.discount'  > {{ (post.price * post.discount / 100)}} TND</span>
-        </div> 
+        </div>
     </div>
 </div>
 <payment v-if="boolean" :msg=[index1,index2,price] />
 </section>
-
 </template>
 <script>
 import axios from "axios";
 import payment from "./payment.vue"
 export default {
-  
   components: {
     payment
   },
@@ -47,8 +35,8 @@ export default {
       data:null,
       imgsrc:null,
       boolean:false,
-posts:[], 
-   } 
+posts:[],
+   }
    },
    mounted(){
          axios.get('http://localhost:5000/admin')
@@ -66,9 +54,7 @@ posts:[],
       },
 }
 }
-
 </script>
-
 <style>
  section{
     background-color:#e5e8f6;
@@ -91,7 +77,7 @@ posts:[],
     padding: 0 10vw;
     display: flex;
     overflow-x: auto;
-    scroll-behavior: smooth; 
+    scroll-behavior: smooth;
 }
 .product-container::-webkit-scrollbar{
     display: none;
@@ -108,17 +94,6 @@ posts:[],
     height: 350px;
     overflow: hidden;
 }
-<<<<<<< HEAD
-.product-image:hover{
-    width: 120%;
-    height: 370px;
-    border-radius: 15px;
-    cursor: pointer;
-  
-  }
-
-=======
->>>>>>> 5a5d1675d9cc1d40ac41e990daeffb1d91873997
 .product-thumb{
     width: 100%;
     height: 350px;
@@ -130,7 +105,7 @@ posts:[],
     background: #fff;
     padding: 11px;
     border-radius: 6px;
-    color: #ff7d7d;
+    color: #FF7D7D;
     font-size: 16px;
     right: 10px;
     top: 10px;
@@ -156,7 +131,7 @@ posts:[],
     opacity: 1;
 }
 .card-btn:hover{
-    background: #efefef;
+    background: #EFEFEF;
 }
 .product-info{
     width: 100%;
@@ -188,5 +163,5 @@ posts:[],
         font-weight: 900;
     font-size: 20px;
     color :red;
-}  
+}
 </style>

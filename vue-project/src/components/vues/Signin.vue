@@ -230,7 +230,7 @@ methods: {
      })}
        else if(result.data === 'login successful' ){
     alert(result.data)
-    window.location.href= "http://localhost:3000/UnderNav"
+    window.location.href= "http://localhost:5000/UnderNav"
      axios.post('http://localhost:5000/getUserinfo',{
         email: this.email,
      }).then(result => {
@@ -242,11 +242,11 @@ methods: {
            return;
         }
      }).catch((error) => {
-        console.log(error);
+        alert(error);
      })  
         }
         else{
-           console.log(result.data)
+           alert(result.data)
         }
     })
     .catch(err => {

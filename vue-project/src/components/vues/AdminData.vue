@@ -1,19 +1,5 @@
 <template>
 <div>
-
-<<<<<<< HEAD
-  <section class="product">
-
-
-
-    <h2 class="product-category">fares</h2>
-     <!-- <input class="search" v-model="search" type="text" placeholder="search Product"/> -->
-
-    <div>
-    <div class="product-container">
-
-            <div v-for="post in filteredPosts()" :key="post.id">
-=======
   <section class="productt" >
     <h2 class="product-category">fares</h2>
     <input
@@ -24,13 +10,12 @@
     />
     <div class="product-container">
       <div v-for="post in filteredPosts()" :key="post.id" class="product-card">
->>>>>>> 26d068c259e1336687d54c47b56962c94b8b439b
         <div class="product-image">
           <span class="discount-tag" v-if="post.discount">
             {{ post.discount }}% off</span
           >
           <img :src="post.image" class="product-thumb" />
-          <button class="card-btn1" @click="updateitem(post)">Update</button
+          <button class="card-btn1" @click="updateitem(post.id)">Update</button
           ><br />
           <button class="card-btn2" @click="deleteitem(post.id)">Delete</button>
         </div>
@@ -45,10 +30,6 @@
       </div>
       <signin msg="lol" />
     </div>
-<<<<<<< HEAD
-  
-    
-=======
   </section>
   <h1 style="text-align: center" class="update-h1">Update The Product</h1>
   <div class="omar">
@@ -95,18 +76,14 @@
     <div v-if="!image">
       <h2 class="textoo-o">Select a product image</h2>
       <input type="file" @change="onFileChange" class="files" />
->>>>>>> 26d068c259e1336687d54c47b56962c94b8b439b
     </div>
     <div v-else>
       <img :src="image" class="imaget-t" />
     </div>
     <br />
   </div>
-
 </div>
-
 </template>
-
 <script>
 import axios from "axios";
 export default {
@@ -125,9 +102,8 @@ image:'',
 price:'',
 discount:'',
 gender:''
-   } 
+   }
    },
- 
  mounted(){
          axios.get('http://localhost:5000/admin')
          .then((result)=>{
@@ -136,15 +112,12 @@ gender:''
              })
              .catch((error)=>{console.log(error)})
   },
- 
-
   methods: {
           filteredPosts(){
             console.log(this.posts,'filter')
        return this.posts.filter(post =>
          post.title.toLowerCase().includes(this.search.toLowerCase())
        );
-      
      },
      deleteitem(postId){
     axios.delete('http://localhost:5000/'+`${postId}`).then(()=>{window.location.reload()}).catch((err)=>{console.log(err)})
@@ -155,7 +128,7 @@ gender:''
   },
    updateitem(postId){
      if(this.title && this.description && this.image && this.price){
-   axios.put('http://localhost:5000/'+`${postId}`,{  
+   axios.put('http://localhost:5000/'+`${postId}`,{
       title: this.title,
       description: this.description,
       image:this.image,
@@ -173,7 +146,6 @@ gender:''
       alert('please fill all the fields')
     }
      },
-     
   onFileChange(e) {
       var files = e.target.files;
       if (!files.length) return;
@@ -195,7 +167,7 @@ gender:''
 </script>
 <style>
 .productt {
-  background-color: #ffeee6;
+  background-color: #FFEEE6;
 }
 .productt {
   position: relative;
@@ -246,7 +218,7 @@ gender:''
   background: #fff;
   padding: 11px;
   border-radius: 6px;
-  color: #ff7d7d;
+  color: #FF7D7D;
   font-size: 16px;
   right: 10px;
   top: 10px;
@@ -291,10 +263,10 @@ gender:''
   opacity: 1;
 }
 .card-btn2:hover {
-  background: #efefef;
+  background: #EFEFEF;
 }
 .card-btn1:hover {
-  background: #efefef;
+  background: #EFEFEF;
 }
 .product-info {
   width: 100%;
@@ -327,10 +299,6 @@ gender:''
   font-size: 20px;
   color: red;
 }
-<<<<<<< HEAD
-.files{
-  margin-left: 10cm;
-=======
 .nwme-me {
   width: 43%;
   height: 53px;
@@ -362,14 +330,13 @@ gender:''
   border: none;
   outline: none;
   box-sizing: border-box;
-  background: #ecf0f3;
+  background: #ECF0F3;
   padding: 10px;
   padding-left: 20px;
   height: 50px;
   font-size: 22px;
   border-radius: 50px;
-  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
->>>>>>> 26d068c259e1336687d54c47b56962c94b8b439b
+  box-shadow: inset 6px 6px 6px #CBCED1, inset -6px -6px 6px white;
 }
 .files {
   margin-left: 10cm;
@@ -380,30 +347,6 @@ gender:''
 .string {
   margin-left: 17cm;
 }
-<<<<<<< HEAD
-
-.search{
-  margin-left: 39cm;
-    width: 500px;
-    border-radius: 10px;
-    display: flex;
-    height: 62px;
-}
-.search-box{
-    width:80%;
-    height:50px;
-    padding:20px;
-    border-top-left-radius: 17px;
-    border: 1px solid #000000;
-    
-    font-size: medium;
-    background:none;
-    color:#000000;
-    outline:none;
-}
-
-</style>
-=======
 .search {
   margin-left: 22cm;
   width: 513px;
@@ -427,8 +370,7 @@ gender:''
   outline: none;
 }
 .update-h1 {
-  color: #ff621e;
+  color: #FF621E;
   margin-bottom: 52px;
 }
 </style>
->>>>>>> 26d068c259e1336687d54c47b56962c94b8b439b
