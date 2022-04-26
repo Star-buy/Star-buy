@@ -43,15 +43,15 @@
 
 ⭐ User Features
 
-- Authentication (Signup, Login, Reset Password).
+- Authentication (Signup, Login).
 - Real time update.
 - User Profile (Upload, Edit Profile Picture, Address). 
-- Add Items to Cart, to wishlist./ almost.
-- Place an Order./
+- Add Items to Cart, to wishlist.
+- Place an Order.
 - Payment Methods: cash, cashapp, credit card.
-- Push notification to user whenever order status, user information change./on wait
-- Send email for reseting password as well as update order information./on wait
-- Review, Comment, Rating Product (In Processing).
+- Push notification to user whenever order status, user information change.
+- Send email for reseting password as well as update order information.
+- Review, Comment, Rating Product .
 
 
 ⭐ Admin Features
